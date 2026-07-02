@@ -1,3 +1,24 @@
+# John Austine Osumba — Digital Marketing Portfolio
+
+Personal portfolio website for John Austine Osumba, Digital Marketing & Communications Specialist, Nairobi, Kenya.
+
+**Stack:** Next.js 16 · Tailwind CSS v4 · Framer Motion · TypeScript
+
+---
+
+## PLACEHOLDER GUIDE
+
+Search the codebase for `// PLACEHOLDER` to find every item to fill in:
+- **Portrait**: drop `public/portrait.jpg` and update `components/Hero.tsx`
+- **Project images/videos**: update `projects` array in `components/Projects.tsx`
+- **Stats**: update `stats` array in `components/About.tsx`
+- **Testimonials**: update `testimonials` array in `components/Testimonials.tsx`
+- **CV PDF**: drop `public/cv-john-austine-osumba.pdf`
+- **Contact form endpoint**: update submit handler in `components/Contact.tsx`
+- **OG image**: uncomment `images` in `app/layout.tsx` metadata after deploy
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
