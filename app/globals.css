@@ -3,10 +3,18 @@
 /* Dark mode via .dark class on <html> */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/*
+ * Typography & accent matched to osumbaportfolio.vercel.app
+ * Heading/body font : Urbanist (Google Fonts) — weights 400 500 600 700 800
+ * Fallback display  : Lufga (self-hosted on dev portfolio, not available here)
+ * Primary accent    : #FF8A33  (extracted from --accent & utility classes)
+ * Accent hover      : #FF6A00  (gradient-from value on dev portfolio)
+ */
+
 /* Custom theme tokens */
 @theme {
-  --color-accent: #1A4A3A;
-  --color-accent-hover: #2D6A56;
+  --color-accent: #FF8A33;
+  --color-accent-hover: #FF6A00;
   --color-terra: #C4622D;
   --color-terra-hover: #A8501F;
   --color-off-white: #FAF7F2;
@@ -17,8 +25,8 @@
   --color-border: #E5DDD4;
   --color-border-dark: #2A2A2A;
 
-  --font-display: var(--font-playfair), "Playfair Display", Georgia, serif;
-  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+  --font-display: var(--font-urbanist), "Urbanist", system-ui, sans-serif;
+  --font-sans: var(--font-urbanist), "Urbanist", system-ui, sans-serif;
 
   --radius-card: 12px;
 }
@@ -54,13 +62,13 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1A4A3A;
+  background: #FF8A33;
   border-radius: 3px;
 }
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #1A4A3A 0%, #C4622D 100%);
+  background: linear-gradient(135deg, #FF8A33 0%, #FF6A00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

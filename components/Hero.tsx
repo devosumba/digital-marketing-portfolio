@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -34,7 +35,7 @@ export default function Hero() {
         >
           <defs>
             <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#1A4A3A" strokeWidth="1" />
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#FF8A33" strokeWidth="1" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
@@ -128,30 +129,59 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Portrait / Visual */}
+          {/* Portrait */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
             className="relative flex justify-center lg:justify-end"
           >
-            <div className="relative w-72 h-72 md:w-96 md:h-96">
-              {/* Accent ring */}
-              <div className="absolute -inset-3 rounded-2xl border-2 border-accent/20 dark:border-accent/30 rotate-3" />
-              <div className="absolute -inset-6 rounded-2xl border border-terra/10 dark:border-terra/20 -rotate-2" />
+            <div className="relative w-72 h-80 md:w-[400px] md:h-[480px]">
+              {/* Decorative rings */}
+              <div className="absolute -inset-3 rounded-2xl border-2 border-accent/30 dark:border-accent/40 rotate-2" />
+              <div className="absolute -inset-6 rounded-2xl border border-accent/10 dark:border-accent/20 -rotate-1" />
 
-              {/* PLACEHOLDER: Replace the div below with an actual <img> or next/image of your portrait */}
-              {/* Example: <Image src="/portrait.jpg" alt="John Austine Osumba" fill className="object-cover rounded-xl" /> */}
-              <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 via-surface to-terra/10 dark:from-accent/30 dark:via-surface-dark dark:to-terra/20 flex flex-col items-center justify-center gap-3 border border-border dark:border-border-dark">
-                <div className="w-16 h-16 rounded-full bg-accent/20 dark:bg-accent/30 flex items-center justify-center">
-                  <svg width="32" height="32" fill="none" stroke="#1A4A3A" strokeWidth="1.5" viewBox="0 0 24 24">
-                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
+              {/* Portrait image — saved at public/images/hero.jpg */}
+              <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/hero.jpg"
+                  alt="John Austine Osumba, Digital Marketing & Communications Specialist"
+                  fill
+                  priority
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 288px, 400px"
+                />
+              </div>
+
+              {/* Floating accent badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1, duration: 0.5 }}
+                className="absolute -bottom-4 -left-4 md:-left-8 bg-off-white dark:bg-surface-dark rounded-xl px-4 py-3 shadow-lg border border-border dark:border-border-dark flex items-center gap-3"
+              >
+                <div className="w-8 h-8 rounded-full bg-accent/15 dark:bg-accent/25 flex items-center justify-center flex-shrink-0">
+                  <svg width="14" height="14" fill="none" stroke="#FF8A33" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                    <polyline points="17 6 23 6 23 12" />
                   </svg>
                 </div>
-                <p className="text-xs text-muted dark:text-gray-400 font-medium">Portrait Placeholder</p>
-                <p className="text-[10px] text-muted/60 dark:text-gray-500 px-4 text-center">Replace with actual photo in /public/portrait.jpg</p>
-              </div>
+                <div>
+                  <p className="text-[10px] text-muted dark:text-gray-400 leading-none mb-0.5">Engagement Growth</p>
+                  <p className="text-sm font-bold text-charcoal dark:text-off-white leading-none">+45%</p>
+                </div>
+              </motion.div>
+
+              {/* Top-right badge */}
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.5 }}
+                className="absolute -top-4 -right-4 md:-right-6 bg-accent text-off-white rounded-xl px-3 py-2 shadow-lg shadow-accent/25 text-center"
+              >
+                <p className="text-[10px] font-medium leading-none mb-0.5 opacity-80">Based in</p>
+                <p className="text-xs font-bold leading-none">Nairobi 🇰🇪</p>
+              </motion.div>
             </div>
           </motion.div>
         </div>
