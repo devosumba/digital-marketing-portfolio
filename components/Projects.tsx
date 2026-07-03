@@ -83,21 +83,22 @@ const projects: Project[] = [
   },
   {
     id: "enterprise-ad",
-    title: "Enterprise Professional Ad",
-    subtitle: "Enterprise Video Advertisement — B2B Brand Film",
+    title: "Enterprise Professional Ad — Sheth Naturals",
+    subtitle: "YouTube & Google Ads Campaign — Brand Story & Product Range",
     category: "Enterprise",
-    tags: ["Enterprise", "Video Production", "B2B"],
+    tags: ["Video Production", "YouTube Ads", "Google Ads", "Brand Storytelling"],
     coverColor: "from-slate-900/30 to-blue-800/10",
+    thumbnail: "https://img.youtube.com/vi/JVnBDc9ovGQ/hqdefault.jpg",
     challenge:
-      "PLACEHOLDER: Describe the enterprise brief — target audience (corporate buyers, decision-makers), desired brand perception, and production constraints.",
+      "Sheth Naturals needed a brand film that could carry its story and full product range to a wider audience across enterprise-grade video channels — something polished enough to run as paid media, not just organic content.",
     approach:
-      "PLACEHOLDER: Explain creative strategy — tone of voice, visual language, storytelling structure, and how it ladders to brand positioning.",
+      "Produced a professional brand video telling the Sheth Naturals story — its history and the breadth of its product array — designed for distribution as a YouTube and Google Ads video campaign, giving the brand a consistent, high-production-value asset for paid reach.",
     execution:
-      "PLACEHOLDER: Describe the production process — pre-production, shoot details, post-production, distribution channels.",
+      "Coordinated the production of the brand film covering Sheth Naturals' origin and product range, then deployed it as a paid video campaign across YouTube and the Google Ads network to extend reach beyond owned channels.",
     results:
-      "PLACEHOLDER: Share performance metrics — views, engagement, lead generation, or brand lift data.",
+      "PLACEHOLDER: Share measurable outcomes — views, watch-through rate, reach, or campaign performance figures. Add real numbers once available.",
     mediaType: "video",
-    videoUrl: "https://www.youtube.com/embed/PLACEHOLDER_VIDEO_ID", // PLACEHOLDER: Replace with actual YouTube video ID
+    videoUrl: "https://www.youtube.com/embed/JVnBDc9ovGQ",
   },
   {
     id: "back-to-school",
@@ -177,7 +178,8 @@ function PlaceholderMedia({ project }: { project: Project }) {
               className="absolute inset-0 w-full h-full"
               src={project.videoUrl}
               title={project.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             />
           )}
@@ -356,7 +358,7 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
       <div
         className={`relative overflow-hidden flex items-end p-5 ${
           project.thumbnail
-            ? "aspect-square bg-off-white dark:bg-charcoal"
+            ? `${project.mediaType === "video" ? "aspect-video" : "aspect-square"} bg-off-white dark:bg-charcoal`
             : `h-44 bg-gradient-to-br ${project.coverColor}`
         }`}
       >
@@ -368,6 +370,15 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
             className="object-contain"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
+        )}
+        {project.thumbnail && project.mediaType === "video" && (
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="w-12 h-12 rounded-full bg-charcoal/60 flex items-center justify-center">
+              <svg width="18" height="18" fill="#FAF7F2" viewBox="0 0 24 24">
+                <path d="M5 3l14 9-14 9V3z" />
+              </svg>
+            </div>
+          </div>
         )}
         <span className="relative text-xs font-medium text-muted dark:text-gray-400 uppercase tracking-wider px-2 py-1 rounded-full bg-off-white/80 dark:bg-charcoal/80 backdrop-blur-sm">
           {project.category}

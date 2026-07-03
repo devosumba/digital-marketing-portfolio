@@ -17,6 +17,7 @@ https://github.com/devosumba/digital-marketing-portfolio
 | Styling | Tailwind CSS v4 (config via `@theme` in CSS — no `tailwind.config.ts`) |
 | Animations | Framer Motion v12 |
 | Fonts | Urbanist (Google Fonts, 400–800) — matched to osumbaportfolio.vercel.app |
+| Remote images | `next.config.ts` allows `img.youtube.com` via `images.remotePatterns` (for YouTube video-card thumbnails) |
 | Deployment target | Vercel or Netlify (static export) |
 
 ## Key Files & What They Do
@@ -84,8 +85,8 @@ Search `// PLACEHOLDER` across the codebase. Key items:
 - `public/images/hero.jpg` ✅ Done
 - Naivas case file (thumbnail + copy) ✅ Done — results field intentionally still a placeholder
 - Bestlady case file (thumbnail + gallery + copy) ✅ Done — results field intentionally still a placeholder
-- Remaining project images (Enterprise Ad, Back-to-School, BTS Design, UGC Videos) → still placeholder grids in `Projects.tsx`
-- YouTube video URLs in `Projects.tsx` `projects` array
+- Enterprise Ad case file (YouTube embed `JVnBDc9ovGQ` + copy) ✅ Done — results field intentionally still a placeholder
+- Remaining project images (Back-to-School, BTS Design, UGC Videos) → still placeholder grids in `Projects.tsx`
 - Stats in `About.tsx` `stats` array
 - Testimonial quotes/names in `Testimonials.tsx`
 - CV PDF → `public/cv-john-austine-osumba.pdf`
