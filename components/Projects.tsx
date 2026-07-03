@@ -28,20 +28,20 @@ interface Project {
 const projects: Project[] = [
   {
     id: "naivas",
-    title: "Naivas Campaign",
+    title: "Naivas Kikapu Kibonge — Naivas Campaign",
     subtitle: "Retail Campaign — Brand Awareness & Activation",
     category: "Campaigns",
-    tags: ["Retail", "Brand Awareness", "Social Media"],
+    tags: ["Retail", "Brand Awareness", "Social Media", "UGC", "SMS Marketing"],
     coverColor: "from-green-900/20 to-emerald-600/10",
     thumbnail: "/images/projects/naivas.png",
     challenge:
-      "PLACEHOLDER: Describe the marketing challenge faced for the Naivas campaign — e.g., driving footfall, seasonal awareness, competitive context.",
+      "Mizizi and Sheba needed to convert supermarket footfall into product discovery. With the brands newly stocked in Naivas, the priority was making sure shoppers actually knew the products were on shelf and gave them a reason to try them, not just walk past.",
     approach:
-      "PLACEHOLDER: Explain the strategic approach — channel mix, audience targeting, creative direction, and key messaging decisions.",
+      "We joined Naivas' Kikapu Kibonge promotion as a 3-month retail partnership, anchoring the campaign around clear stockist messaging — telling shoppers exactly where to find Mizizi and Sheba, store by store, starting with Naivas Langata Road. The strategy paired store-level visibility with organic proof and direct reach: UGC content to build trust and social credibility, and mass SMS to push the message straight to a wider customer base beyond social media's reach.",
     execution:
-      "PLACEHOLDER: Detail how the campaign was executed — content formats produced, media placements, influencer involvement, timeline.",
+      "Designed and rolled out stockist-alert posters for individual Naivas branches, produced UGC content featuring the products in real shopping contexts, and ran a mass SMS campaign to notify existing customers of retail availability. The campaign ran continuously across the 3-month Kikapu Kibonge partnership window, keeping stockist messaging visible in-store while UGC and SMS carried the message beyond the store itself.",
     results:
-      "PLACEHOLDER: Share measurable outcomes — reach, engagement, sales lift, or other KPIs. Add real figures here.",
+      "PLACEHOLDER: Share measurable outcomes — reach, engagement, sales lift, redemption rate, or other KPIs. Add real figures once available.",
     mediaType: "images",
     imageCount: 4, // PLACEHOLDER: Replace with actual image gallery
   },
@@ -194,13 +194,13 @@ function PlaceholderMedia({ project }: { project: Project }) {
   return (
     <div className="grid grid-cols-2 gap-3">
       {project.thumbnail && (
-        <div className="col-span-2 relative aspect-[4/3] rounded-xl bg-charcoal/5 dark:bg-off-white/5 border border-border dark:border-border-dark overflow-hidden">
+        <div className="col-span-2 relative aspect-square max-w-sm mx-auto w-full rounded-xl bg-charcoal/5 dark:bg-off-white/5 border border-border dark:border-border-dark overflow-hidden">
           <Image
             src={project.thumbnail}
             alt={`${project.title} campaign asset`}
             fill
             className="object-contain"
-            sizes="(max-width: 768px) 100vw, 640px"
+            sizes="(max-width: 768px) 100vw, 384px"
           />
         </div>
       )}
@@ -311,7 +311,11 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
     >
       {/* Cover */}
       <div
-        className={`h-44 bg-gradient-to-br ${project.coverColor} relative overflow-hidden flex items-end p-5`}
+        className={`relative overflow-hidden flex items-end p-5 ${
+          project.thumbnail
+            ? "aspect-square bg-off-white dark:bg-charcoal"
+            : `h-44 bg-gradient-to-br ${project.coverColor}`
+        }`}
       >
         {project.thumbnail && (
           <Image
@@ -416,6 +420,7 @@ export default function Projects() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3, delay: i * 0.05 }}
+                className="self-start"
               >
                 <ProjectCard project={project} onClick={() => setSelectedProject(project)} />
               </motion.div>
