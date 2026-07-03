@@ -506,6 +506,14 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 }
 
 function ProjectCard({ project, onClick }: { project: Project; onClick: () => void }) {
+  // UGC-style projects have no single thumbnail image — preview the first real clip instead.
+  const coverVideoSrc =
+    !project.thumbnail && project.mediaType === "videos" ? project.videoUrls?.[0]?.src : undefined;
+  const hasCover = !!project.thumbnail || !!coverVideoSrc;
+  const coverAspect = project.thumbnailAspect ?? (coverVideoSrc ? "9/16" : undefined);
+  const coverFit = project.thumbnailFit ?? (coverVideoSrc ? "height-centered" : undefined);
+  const isVideoPreview = project.mediaType === "video" || !!coverVideoSrc;
+
   return (
     <motion.button
       whileHover={{ y: -4 }}
@@ -516,49 +524,45 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
       {/* Cover */}
       <div
         className={`relative overflow-hidden flex items-end p-5 ${
-          project.thumbnail
+          hasCover
             ? `bg-off-white dark:bg-charcoal ${
-                project.thumbnailFit === "height-centered"
-                  ? "h-44"
-                  : project.thumbnailAspect
-                  ? ""
-                  : project.mediaType === "video"
-                  ? "aspect-video"
-                  : "aspect-square"
+                coverFit === "height-centered" ? "h-44" : coverAspect ? "" : "aspect-square"
               }`
             : `h-44 bg-gradient-to-br ${project.coverColor}`
         }`}
-        style={
-          project.thumbnail && project.thumbnailAspect && project.thumbnailFit !== "height-centered"
-            ? { aspectRatio: project.thumbnailAspect }
-            : undefined
-        }
+        style={hasCover && coverAspect && coverFit !== "height-centered" ? { aspectRatio: coverAspect } : undefined}
       >
-        {project.thumbnail && project.thumbnailFit === "height-centered" ? (
-          <div
-            className="absolute inset-y-0 left-1/2 -translate-x-1/2 h-full"
-            style={{ aspectRatio: project.thumbnailAspect }}
-          >
-            <Image
-              src={project.thumbnail}
-              alt={`${project.title} thumbnail`}
-              fill
-              className="object-contain"
-              sizes="176px"
-            />
+        {hasCover && coverFit === "height-centered" && (
+          <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 h-full" style={{ aspectRatio: coverAspect }}>
+            {coverVideoSrc ? (
+              <video
+                src={`${coverVideoSrc}#t=0.5`}
+                muted
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-contain"
+              />
+            ) : (
+              <Image
+                src={project.thumbnail!}
+                alt={`${project.title} thumbnail`}
+                fill
+                className="object-contain"
+                sizes="176px"
+              />
+            )}
           </div>
-        ) : (
-          project.thumbnail && (
-            <Image
-              src={project.thumbnail}
-              alt={`${project.title} thumbnail`}
-              fill
-              className="object-contain"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            />
-          )
         )}
-        {project.thumbnail && project.mediaType === "video" && (
+        {hasCover && coverFit !== "height-centered" && project.thumbnail && (
+          <Image
+            src={project.thumbnail}
+            alt={`${project.title} thumbnail`}
+            fill
+            className="object-contain"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        )}
+        {hasCover && isVideoPreview && (
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div className="w-12 h-12 rounded-full bg-charcoal/60 flex items-center justify-center">
               <svg width="18" height="18" fill="#FAF7F2" viewBox="0 0 24 24">
