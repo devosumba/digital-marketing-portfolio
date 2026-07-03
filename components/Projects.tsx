@@ -269,11 +269,11 @@ const projects: Project[] = [
     mediaType: "images",
   },
   {
-    id: "ugc-videos",
-    title: "UGC Video Reel",
+    id: "ugc-curl-creme",
+    title: "Curl Crème",
     subtitle: "User-Generated Content — Authentic Brand Storytelling",
     category: "Video/UGC",
-    tags: ["UGC", "Video", "Community", "Influencer"],
+    tags: ["UGC", "Video", "Curl Crème"],
     coverColor: "from-teal-900/20 to-cyan-600/10",
     challenge:
       "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
@@ -284,22 +284,241 @@ const projects: Project[] = [
     results:
       "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
     mediaType: "videos",
-    videoUrls: [
-      { src: "/videos/ugc/curl-creme.mp4", caption: "Curl Crème" },
-      { src: "/videos/ugc/finger-coils-curl-creme.mp4", caption: "Finger Coils — Curl Crème" },
-      { src: "/videos/ugc/comb-coils-curl-creme.mp4", caption: "Comb Coils — Curl Crème" },
-      { src: "/videos/ugc/twist-outs-curl-creme.mp4", caption: "Twist Outs — Curl Crème" },
-      { src: "/videos/ugc/transforming-curls-wash-and-go.mp4", caption: "Transforming Curls With Wash & Go" },
-      { src: "/videos/ugc/wash-and-go-style.mp4", caption: "Wash & Go Style" },
-      { src: "/videos/ugc/flexi-rods-wash-and-go-gel.mp4", caption: "Flexi Rods Using Wash & Go Gel" },
-      { src: "/videos/ugc/detangling-instant-conditioner.mp4", caption: "Detangling Using Instant Conditioner" },
-      { src: "/videos/ugc/baby-hair-detangling.mp4", caption: "Baby's Hair Detangling" },
-      { src: "/videos/ugc/sister-loc-moisturizer.mp4", caption: "Sister Loc Moisturizer" },
-      { src: "/videos/ugc/masking-bentonite-clay-rosewater.mp4", caption: "Masking — Bentonite Clay + Rosewater" },
-      { src: "/videos/ugc/body-butters.mp4", caption: "Body Butters" },
-      { src: "/videos/ugc/hair-growth-combo.mp4", caption: "Hair Growth Combo" },
-      { src: "/videos/ugc/small-sku.mp4", caption: "Small SKU" },
-    ],
+    videoUrls: [{ src: "/videos/ugc/curl-creme.mp4", caption: "Curl Crème" }],
+  },
+  {
+    id: "ugc-finger-coils-curl-creme",
+    title: "Finger Coils — Curl Crème",
+    subtitle: "User-Generated Content — Authentic Brand Storytelling",
+    category: "Video/UGC",
+    tags: ["UGC", "Video", "Curl Crème"],
+    coverColor: "from-teal-900/20 to-cyan-600/10",
+    challenge:
+      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+    approach:
+      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+    execution:
+      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+    results:
+      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+    mediaType: "videos",
+    videoUrls: [{ src: "/videos/ugc/finger-coils-curl-creme.mp4", caption: "Finger Coils — Curl Crème" }],
+  },
+  {
+    id: "ugc-comb-coils-curl-creme",
+    title: "Comb Coils — Curl Crème",
+    subtitle: "User-Generated Content — Authentic Brand Storytelling",
+    category: "Video/UGC",
+    tags: ["UGC", "Video", "Curl Crème"],
+    coverColor: "from-teal-900/20 to-cyan-600/10",
+    challenge:
+      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+    approach:
+      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+    execution:
+      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+    results:
+      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+    mediaType: "videos",
+    videoUrls: [{ src: "/videos/ugc/comb-coils-curl-creme.mp4", caption: "Comb Coils — Curl Crème" }],
+  },
+  {
+    id: "ugc-twist-outs-curl-creme",
+    title: "Twist Outs — Curl Crème",
+    subtitle: "User-Generated Content — Authentic Brand Storytelling",
+    category: "Video/UGC",
+    tags: ["UGC", "Video", "Curl Crème"],
+    coverColor: "from-teal-900/20 to-cyan-600/10",
+    challenge:
+      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+    approach:
+      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+    execution:
+      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+    results:
+      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+    mediaType: "videos",
+    videoUrls: [{ src: "/videos/ugc/twist-outs-curl-creme.mp4", caption: "Twist Outs — Curl Crème" }],
+  },
+  {
+    id: "ugc-transforming-curls-wash-and-go",
+    title: "Transforming Curls With Wash & Go",
+    subtitle: "User-Generated Content — Authentic Brand Storytelling",
+    category: "Video/UGC",
+    tags: ["UGC", "Video", "Wash & Go"],
+    coverColor: "from-teal-900/20 to-cyan-600/10",
+    challenge:
+      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+    approach:
+      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+    execution:
+      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+    results:
+      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+    mediaType: "videos",
+    videoUrls: [{ src: "/videos/ugc/transforming-curls-wash-and-go.mp4", caption: "Transforming Curls With Wash & Go" }],
+  },
+  {
+    id: "ugc-wash-and-go-style",
+    title: "Wash & Go Style",
+    subtitle: "User-Generated Content — Authentic Brand Storytelling",
+    category: "Video/UGC",
+    tags: ["UGC", "Video", "Wash & Go"],
+    coverColor: "from-teal-900/20 to-cyan-600/10",
+    challenge:
+      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+    approach:
+      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+    execution:
+      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+    results:
+      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+    mediaType: "videos",
+    videoUrls: [{ src: "/videos/ugc/wash-and-go-style.mp4", caption: "Wash & Go Style" }],
+  },
+  {
+    id: "ugc-flexi-rods-wash-and-go-gel",
+    title: "Flexi Rods Using Wash & Go Gel",
+    subtitle: "User-Generated Content — Authentic Brand Storytelling",
+    category: "Video/UGC",
+    tags: ["UGC", "Video", "Wash & Go Gel"],
+    coverColor: "from-teal-900/20 to-cyan-600/10",
+    challenge:
+      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+    approach:
+      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+    execution:
+      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+    results:
+      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+    mediaType: "videos",
+    videoUrls: [{ src: "/videos/ugc/flexi-rods-wash-and-go-gel.mp4", caption: "Flexi Rods Using Wash & Go Gel" }],
+  },
+  {
+    id: "ugc-detangling-instant-conditioner",
+    title: "Detangling Using Instant Conditioner",
+    subtitle: "User-Generated Content — Authentic Brand Storytelling",
+    category: "Video/UGC",
+    tags: ["UGC", "Video", "Instant Conditioner"],
+    coverColor: "from-teal-900/20 to-cyan-600/10",
+    challenge:
+      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+    approach:
+      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+    execution:
+      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+    results:
+      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+    mediaType: "videos",
+    videoUrls: [{ src: "/videos/ugc/detangling-instant-conditioner.mp4", caption: "Detangling Using Instant Conditioner" }],
+  },
+  {
+    id: "ugc-baby-hair-detangling",
+    title: "Baby's Hair Detangling",
+    subtitle: "User-Generated Content — Authentic Brand Storytelling",
+    category: "Video/UGC",
+    tags: ["UGC", "Video", "Detangling"],
+    coverColor: "from-teal-900/20 to-cyan-600/10",
+    challenge:
+      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+    approach:
+      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+    execution:
+      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+    results:
+      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+    mediaType: "videos",
+    videoUrls: [{ src: "/videos/ugc/baby-hair-detangling.mp4", caption: "Baby's Hair Detangling" }],
+  },
+  {
+    id: "ugc-sister-loc-moisturizer",
+    title: "Sister Loc Moisturizer",
+    subtitle: "User-Generated Content — Authentic Brand Storytelling",
+    category: "Video/UGC",
+    tags: ["UGC", "Video", "Moisturizer"],
+    coverColor: "from-teal-900/20 to-cyan-600/10",
+    challenge:
+      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+    approach:
+      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+    execution:
+      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+    results:
+      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+    mediaType: "videos",
+    videoUrls: [{ src: "/videos/ugc/sister-loc-moisturizer.mp4", caption: "Sister Loc Moisturizer" }],
+  },
+  {
+    id: "ugc-masking-bentonite-clay-rosewater",
+    title: "Masking — Bentonite Clay + Rosewater",
+    subtitle: "User-Generated Content — Authentic Brand Storytelling",
+    category: "Video/UGC",
+    tags: ["UGC", "Video", "Masking"],
+    coverColor: "from-teal-900/20 to-cyan-600/10",
+    challenge:
+      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+    approach:
+      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+    execution:
+      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+    results:
+      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+    mediaType: "videos",
+    videoUrls: [{ src: "/videos/ugc/masking-bentonite-clay-rosewater.mp4", caption: "Masking — Bentonite Clay + Rosewater" }],
+  },
+  {
+    id: "ugc-body-butters",
+    title: "Body Butters",
+    subtitle: "User-Generated Content — Authentic Brand Storytelling",
+    category: "Video/UGC",
+    tags: ["UGC", "Video", "Body Butters"],
+    coverColor: "from-teal-900/20 to-cyan-600/10",
+    challenge:
+      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+    approach:
+      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+    execution:
+      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+    results:
+      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+    mediaType: "videos",
+    videoUrls: [{ src: "/videos/ugc/body-butters.mp4", caption: "Body Butters" }],
+  },
+  {
+    id: "ugc-hair-growth-combo",
+    title: "Hair Growth Combo",
+    subtitle: "User-Generated Content — Authentic Brand Storytelling",
+    category: "Video/UGC",
+    tags: ["UGC", "Video", "Hair Growth"],
+    coverColor: "from-teal-900/20 to-cyan-600/10",
+    challenge:
+      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+    approach:
+      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+    execution:
+      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+    results:
+      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+    mediaType: "videos",
+    videoUrls: [{ src: "/videos/ugc/hair-growth-combo.mp4", caption: "Hair Growth Combo" }],
+  },
+  {
+    id: "ugc-small-sku",
+    title: "Small SKU",
+    subtitle: "User-Generated Content — Authentic Brand Storytelling",
+    category: "Video/UGC",
+    tags: ["UGC", "Video", "Small SKU"],
+    coverColor: "from-teal-900/20 to-cyan-600/10",
+    challenge:
+      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+    approach:
+      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+    execution:
+      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+    results:
+      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+    mediaType: "videos",
+    videoUrls: [{ src: "/videos/ugc/small-sku.mp4", caption: "Small SKU" }],
   },
 ];
 
@@ -336,6 +555,26 @@ function PlaceholderMedia({ project }: { project: Project }) {
   }
 
   if (project.mediaType === "videos") {
+    if (project.videoUrls && project.videoUrls.length === 1) {
+      const v = project.videoUrls[0];
+      return (
+        <div className="flex flex-col gap-1.5 max-w-xs mx-auto">
+          <div className="aspect-[9/16] rounded-xl overflow-hidden bg-charcoal/5 dark:bg-off-white/5 border border-border dark:border-border-dark">
+            <video
+              src={v.src}
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full h-full object-contain bg-charcoal"
+            >
+              Your browser does not support inline video playback.
+            </video>
+          </div>
+          <p className="text-xs text-muted dark:text-gray-500 text-center px-1 leading-snug">{v.caption}</p>
+        </div>
+      );
+    }
+
     if (project.videoUrls && project.videoUrls.length > 0) {
       return (
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">

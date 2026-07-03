@@ -75,10 +75,16 @@ public/
 
   videos/
     ugc/          — 14 real UGC clips (TikTok-style, vertical 9:16, phone-recorded mp4s).
-                    Rendered as native <video controls playsInline> tiles in a responsive
-                    3-col (2-col on mobile) grid via Project.videoUrls ({ src, caption }),
-                    replacing the old icon-placeholder grid. Captions are cleaned-up labels
-                    derived from the real source filenames, not invented copy.
+                    Each clip is its own project card in the Video/UGC grid (not one combined
+                    card), so all 14 are directly visible when the Video/UGC filter pill is
+                    clicked — matching the one-card-per-project pattern used everywhere else.
+                    Card cover previews the video frame (via the existing coverVideoSrc /
+                    thumbnailFit "height-centered" logic already built for video covers); the
+                    modal renders a single centered <video controls playsInline> player.
+                    Captions/titles are cleaned-up labels derived from the real source
+                    filenames, not invented copy. Case-study copy (challenge/approach/
+                    execution/results) is the same generic UGC-program placeholder text
+                    repeated across all 14, since none of it is per-clip specific.
 ```
 
 ## Design System
@@ -103,7 +109,7 @@ public/
 Page order (app/page.tsx) and nav pill order both follow: Hero → About → Work → Expertise → Skills → Testimonials → Contact.
 1. **Hero** — Name, gradient "Austine" text, subtitle, positioning statement, portrait photo, CTA buttons, floating badges (+45% / Nairobi), location tag
 2. **About** — Narrative bio, 3 experience cards (Sheth Naturals / VW Rwanda / Working Style), 4-stat strip
-3. **Projects** ("Work", `#projects`) — 10 projects with filterable grid + case-study modals, in display order: Naivas, Bestlady, Beauty Click, My Dawa, Enterprise Ad, Back-to-School Campaign, BTS Design, Sense Coffee, Mizizi & Sheba Roll-up Banners, UGC Videos. Ordered before Expertise per request.
+3. **Projects** ("Work", `#projects`) — 23 project cards with filterable grid + case-study modals: Naivas, Bestlady, Beauty Click, My Dawa, Enterprise Ad, Back-to-School Campaign, BTS Design, Sense Coffee, Mizizi & Sheba Roll-up Banners, and 14 individual UGC video clips (one card per clip). Ordered before Expertise per request.
 4. **Expertise** (`#expertise`) — 8 service cards: Strategy, Social/Community, Paid Media, SEO/Web, Influencer/UGC, Brand Comms, Events, Research
 5. **Skills** — 8 tool badges + 8 soft-skill chips
 6. **Testimonials** — 3-slot carousel (placeholders to be filled)
