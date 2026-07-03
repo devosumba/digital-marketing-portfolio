@@ -27,11 +27,22 @@ interface Project {
   tags: string[];
   coverColor: string;
   thumbnail?: string;
+  // Card cover defaults to a square crop (matches most thumbnails); set this when the
+  // thumbnail itself isn't square (e.g. "749/421") so the cover fits it with no gap.
+  thumbnailAspect?: string;
+  // For very tall/narrow thumbnails (e.g. roll-up banner photos): keep the card at the
+  // standard cover height (matching sibling cards) and center a width-constrained box
+  // sized to thumbnailAspect inside it, instead of letting the aspect ratio drive the
+  // whole cover's height.
+  thumbnailFit?: "height-centered";
   images?: GalleryImage[];
-  challenge: string;
-  approach: string;
-  execution: string;
-  results: string;
+  // Design showcase pieces (a single collateral project, not a campaign) use a plain
+  // `description` instead of the 4-part case-study breakdown below.
+  description?: string;
+  challenge?: string;
+  approach?: string;
+  execution?: string;
+  results?: string;
   mediaType: "images" | "video" | "videos";
   // PLACEHOLDER: videoUrl, imageUrls will be filled with real assets
   videoUrl?: string;
@@ -197,6 +208,48 @@ const projects: Project[] = [
       "PLACEHOLDER: Note the impact — how designs performed in paid ads, print runs, or stakeholder approval.",
     mediaType: "images",
     imageCount: 6, // PLACEHOLDER: Replace with actual design files/exports
+  },
+  {
+    id: "sense-coffee",
+    title: "Sense Coffee",
+    subtitle: "Brand & Promotional Design",
+    category: "Design",
+    tags: ["Design", "Brand Collateral"],
+    coverColor: "from-emerald-900/20 to-orange-500/10",
+    thumbnail: "/images/projects/sense-coffee/coffee-bags-trio.jpg",
+    thumbnailAspect: "749/421",
+    images: [
+      { src: "/images/projects/sense-coffee/coffee-bags-trio.jpg", aspect: "749/421" },
+      { src: "/images/projects/sense-coffee/business-cards-flatlay.jpg", aspect: "750/633" },
+      { src: "/images/projects/sense-coffee/logo-and-bag.jpg", aspect: "600/338" },
+      { src: "/images/projects/sense-coffee/logo-with-coffee-beans.jpg", aspect: "749/421" },
+      { src: "/images/projects/sense-coffee/storefront-signage.jpg", aspect: "600/338" },
+    ],
+    description:
+      "PLACEHOLDER — describe the Sense Coffee design work (brief, deliverables, purpose). Add specifics once available; do not invent details.",
+    mediaType: "images",
+  },
+  {
+    id: "mizizi-sheba-rollup-banners",
+    title: "Mizizi & Sheba Roll-up Banners",
+    subtitle: "Exhibition & Marketing Collateral Design",
+    category: "Design",
+    tags: ["Design", "Brand Collateral", "Exhibitions"],
+    coverColor: "from-red-900/20 to-fuchsia-500/10",
+    thumbnail: "/images/projects/mizizi-sheba-rollup-banners/sheth-naturals-corporate.png",
+    thumbnailAspect: "1280/2792",
+    thumbnailFit: "height-centered",
+    images: [
+      { src: "/images/projects/mizizi-sheba-rollup-banners/sheth-naturals-corporate.png", aspect: "1280/2792" },
+      { src: "/images/projects/mizizi-sheba-rollup-banners/mizizi-rose-water.png", aspect: "1227/2662" },
+      { src: "/images/projects/mizizi-sheba-rollup-banners/sheba-wash-and-go-gel.png", aspect: "1213/2647" },
+      { src: "/images/projects/mizizi-sheba-rollup-banners/sheba-deep-clean-shampoo-bar.png", aspect: "1213/2647" },
+      { src: "/images/projects/mizizi-sheba-rollup-banners/sheba-get-curly-curl-creme.png", aspect: "1213/2647" },
+      { src: "/images/projects/mizizi-sheba-rollup-banners/sheba-detangler-instant-conditioner.png", aspect: "1227/2662" },
+    ],
+    description:
+      "Roll-up banner designs produced for Mizizi and Sheba's exhibition presence and on-ground marketing operations, giving both brands consistent, professional visual representation at events and activations.",
+    mediaType: "images",
   },
   {
     id: "ugc-videos",
@@ -384,13 +437,16 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
               ))}
             </div>
 
-            {/* Case study sections */}
-            {[
-              { label: "Challenge", content: project.challenge },
-              { label: "Approach", content: project.approach },
-              { label: "Execution", content: project.execution },
-              { label: "Results", content: project.results },
-            ].map((section) => (
+            {/* Case study sections — Design showcase pieces use a single Overview instead */}
+            {(project.description
+              ? [{ label: "Overview", content: project.description }]
+              : [
+                  { label: "Challenge", content: project.challenge },
+                  { label: "Approach", content: project.approach },
+                  { label: "Execution", content: project.execution },
+                  { label: "Results", content: project.results },
+                ]
+            ).map((section) => (
               <div key={section.label}>
                 <h3 className="text-xs uppercase tracking-widest text-terra font-medium mb-2">{section.label}</h3>
                 <p className="text-sm text-charcoal/80 dark:text-off-white/70 leading-relaxed">{section.content}</p>
@@ -421,18 +477,46 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
       <div
         className={`relative overflow-hidden flex items-end p-5 ${
           project.thumbnail
-            ? `${project.mediaType === "video" ? "aspect-video" : "aspect-square"} bg-off-white dark:bg-charcoal`
+            ? `bg-off-white dark:bg-charcoal ${
+                project.thumbnailFit === "height-centered"
+                  ? "h-44"
+                  : project.thumbnailAspect
+                  ? ""
+                  : project.mediaType === "video"
+                  ? "aspect-video"
+                  : "aspect-square"
+              }`
             : `h-44 bg-gradient-to-br ${project.coverColor}`
         }`}
+        style={
+          project.thumbnail && project.thumbnailAspect && project.thumbnailFit !== "height-centered"
+            ? { aspectRatio: project.thumbnailAspect }
+            : undefined
+        }
       >
-        {project.thumbnail && (
-          <Image
-            src={project.thumbnail}
-            alt={`${project.title} thumbnail`}
-            fill
-            className="object-contain"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
+        {project.thumbnail && project.thumbnailFit === "height-centered" ? (
+          <div
+            className="absolute inset-y-0 left-1/2 -translate-x-1/2 h-full"
+            style={{ aspectRatio: project.thumbnailAspect }}
+          >
+            <Image
+              src={project.thumbnail}
+              alt={`${project.title} thumbnail`}
+              fill
+              className="object-contain"
+              sizes="176px"
+            />
+          </div>
+        ) : (
+          project.thumbnail && (
+            <Image
+              src={project.thumbnail}
+              alt={`${project.title} thumbnail`}
+              fill
+              className="object-contain"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+          )
         )}
         {project.thumbnail && project.mediaType === "video" && (
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
