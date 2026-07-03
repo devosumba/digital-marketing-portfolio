@@ -49,6 +49,14 @@ public/
                     slides), all 3375x3375 PNG. Card cover uses sheba-curl-creme-500ml.png as the
                     thumbnail; modal media renders all 15 as a real 3-col gallery grid
                     (Project.images array), each tile object-contain, none cropped/stretched.
+      beautyclick/ — 6 real lifestyle/product-page mockups (mixed aspect ratios — portrait phone
+                    screenshots + one square + a couple of landscape crops), deduped from 8 source
+                    files (2 were exact duplicates). Card thumbnail uses the one square image
+                    (sheba-products-listing.jpg) so the cover matches Naivas/Bestlady sizing
+                    exactly; modal gallery uses the `{ src, aspect }` form of Project.images so
+                    each non-square tile fits its own image tightly (no letterboxing).
+      mydawa/     — 3 real teaser poster color variants (red/black/gray), all 3375x3375 PNG.
+                    Thumbnail is teaser-red.png; modal gallery shows all 3.
 ```
 
 ## Design System
@@ -73,7 +81,7 @@ public/
 Page order (app/page.tsx) and nav pill order both follow: Hero → About → Work → Expertise → Skills → Testimonials → Contact.
 1. **Hero** — Name, gradient "Austine" text, subtitle, positioning statement, portrait photo, CTA buttons, floating badges (+45% / Nairobi), location tag
 2. **About** — Narrative bio, 3 experience cards (Sheth Naturals / VW Rwanda / Working Style), 4-stat strip
-3. **Projects** ("Work", `#projects`) — 6 projects with filterable grid + case-study modals: Naivas, Bestlady, Enterprise Ad, Back-to-School Campaign, BTS Design, UGC Videos. Ordered before Expertise per request.
+3. **Projects** ("Work", `#projects`) — 8 projects with filterable grid + case-study modals, in display order: Naivas, Bestlady, Beauty Click, My Dawa, Enterprise Ad, Back-to-School Campaign, BTS Design, UGC Videos. Ordered before Expertise per request.
 4. **Expertise** (`#expertise`) — 8 service cards: Strategy, Social/Community, Paid Media, SEO/Web, Influencer/UGC, Brand Comms, Events, Research
 5. **Skills** — 8 tool badges + 8 soft-skill chips
 6. **Testimonials** — 3-slot carousel (placeholders to be filled)
@@ -86,6 +94,8 @@ Search `// PLACEHOLDER` across the codebase. Key items:
 - Naivas case file (thumbnail + copy) ✅ Done — results field intentionally still a placeholder
 - Bestlady case file (thumbnail + gallery + copy) ✅ Done — results field intentionally still a placeholder
 - Enterprise Ad case file (YouTube embed `JVnBDc9ovGQ` + copy) ✅ Done — results field intentionally still a placeholder
+- Beauty Click case file (thumbnail + gallery + copy) ✅ Done — results field intentionally still a placeholder
+- My Dawa case file (thumbnail + gallery + copy) ✅ Done — challenge and results fields intentionally still placeholders
 - Remaining project images (Back-to-School, BTS Design, UGC Videos) → still placeholder grids in `Projects.tsx`
 - Stats in `About.tsx` `stats` array
 - Testimonial quotes/names in `Testimonials.tsx`
@@ -94,10 +104,10 @@ Search `// PLACEHOLDER` across the codebase. Key items:
 
 ## Project Case-File Data Model (`Projects.tsx`)
 Each entry in the `projects` array is the single source of truth for that campaign's case file — no separate CMS/data file. Relevant fields:
-- `thumbnail?: string` — single hero image path, used for the card cover always, and for modal media when there's no `images` array.
-- `images?: string[]` — set only when a campaign has more than one distinct real asset worth showing; renders as a real gallery grid in the modal (replaces the placeholder grid entirely).
+- `thumbnail?: string` — single hero image path, used for the card cover always, and for modal media when there's no `images` array. Card cover assumes a square source image (`aspect-square` + `object-contain`); pick a square asset for the thumbnail so the cover matches other cards with no gap.
+- `images?: GalleryImage[]` — set only when a campaign has more than one distinct real asset worth showing; renders as a real gallery grid in the modal (replaces the placeholder grid entirely). `GalleryImage` is either a plain string (assumes 1:1, e.g. Bestlady/My Dawa/Naivas-style square exports) or `{ src, aspect }` (e.g. `"1280/1828"`) for non-square sources like Beauty Click's phone-screenshot mockups, so each gallery tile fits its own image tightly instead of letterboxing it.
 - `imageCount?: number` — only consulted when neither `thumbnail` nor `images` is set, to size the placeholder gallery grid.
-Cover/thumbnail containers use `aspect-square` (matching the source assets, which are all 3375x3375) with `object-contain`, so posters render edge-to-edge with no letterboxing gap and are never cropped or stretched.
+Cover/thumbnail containers default to `aspect-square` with `object-contain`, so posters render edge-to-edge with no letterboxing gap and are never cropped or stretched — as long as the chosen thumbnail is itself square. For video projects (Enterprise Ad), the cover uses `aspect-video` instead.
 
 ## Navbar Style
 Pill/island floating nav — dark pill container (`bg-charcoal/80 backdrop-blur`) centered, nav link text `text-accent` (orange `#FF8A33`), "Get in Touch" filled orange pill on right. No background change on scroll (always floating).

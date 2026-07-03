@@ -6,6 +6,19 @@ import Image from "next/image";
 
 type Category = "All" | "Campaigns" | "Video/UGC" | "Design" | "Enterprise";
 
+// Plain string assumes a 1:1 source image (matches most campaign assets); pass an
+// object with `aspect` (e.g. "1280/1828") when the source isn't square, so the
+// gallery tile fits the image tightly instead of letterboxing it.
+type GalleryImage = string | { src: string; aspect: string };
+
+function imgSrc(item: GalleryImage): string {
+  return typeof item === "string" ? item : item.src;
+}
+
+function imgAspect(item: GalleryImage): string {
+  return typeof item === "string" ? "1/1" : item.aspect;
+}
+
 interface Project {
   id: string;
   title: string;
@@ -14,7 +27,7 @@ interface Project {
   tags: string[];
   coverColor: string;
   thumbnail?: string;
-  images?: string[];
+  images?: GalleryImage[];
   challenge: string;
   approach: string;
   execution: string;
@@ -79,6 +92,55 @@ const projects: Project[] = [
       "Ran a limited May offer through Bestlady's customer base, positioning Mizizi and Sheba products for trial purchase at the adjusted factory-plus price point. The campaign leaned on Bestlady's established trust with its beauty-focused clientele to lower the barrier to first purchase, using the retailer's existing relationship with customers as the credibility bridge for a newer brand entering the space.",
     results:
       "PLACEHOLDER: Share measurable outcomes — units sold during the offer period, customer retention/repeat purchase rate, or other KPIs. Add real figures once available.",
+    mediaType: "images",
+  },
+  {
+    id: "beautyclick",
+    title: "Beauty Click Campaign",
+    subtitle: "E-commerce Listing Optimization & Vendor Expansion",
+    category: "Campaigns",
+    tags: ["E-commerce", "Beauty & Personal Care", "Vendor Management", "Digital Marketing"],
+    coverColor: "from-fuchsia-900/20 to-purple-500/10",
+    thumbnail: "/images/projects/beautyclick/sheba-products-listing.jpg",
+    images: [
+      "/images/projects/beautyclick/sheba-products-listing.jpg",
+      { src: "/images/projects/beautyclick/mizizi-oils-coffee-table.jpg", aspect: "1280/1828" },
+      { src: "/images/projects/beautyclick/mizizi-oils-dinner-table.jpg", aspect: "1280/854" },
+      { src: "/images/projects/beautyclick/palm-kernel-oil-product-page-closeup.jpg", aspect: "1280/1828" },
+      { src: "/images/projects/beautyclick/palm-kernel-oil-product-page-wide.jpg", aspect: "1280/896" },
+      { src: "/images/projects/beautyclick/sheba-curl-creme-product-page.jpg", aspect: "1280/1920" },
+    ],
+    challenge:
+      "Beauty Click, one of Kenya's highest-traffic beauty e-commerce platforms, needed its product listings and promotional presence optimized to convert that traffic more effectively, alongside a push to expand the brand's footprint across additional digital vendors.",
+    approach:
+      "Took ownership of the brand's presence on Beauty Click end-to-end — optimizing product listings for discoverability and conversion, running promotional campaigns on the platform, and identifying and onboarding additional digital vendor channels to expand market reach beyond a single storefront.",
+    execution:
+      "Audited and optimized existing product listings on Beauty Click, planned and executed promotional campaigns timed to platform traffic, and led outreach and coordination to expand distribution across new digital vendor partners.",
+    results:
+      "PLACEHOLDER: Share measurable outcomes — listing conversion improvement, promotional campaign performance, or number of new vendor channels added. Add real figures once available.",
+    mediaType: "images",
+  },
+  {
+    id: "mydawa",
+    title: "My Dawa Campaign",
+    subtitle: "Wellness Brand Teaser Campaign",
+    category: "Campaigns",
+    tags: ["Wellness", "Teaser Campaign", "Brand Awareness"],
+    coverColor: "from-red-900/20 to-orange-500/10",
+    thumbnail: "/images/projects/mydawa/teaser-red.png",
+    images: [
+      "/images/projects/mydawa/teaser-red.png",
+      "/images/projects/mydawa/teaser-black.png",
+      "/images/projects/mydawa/teaser-gray.png",
+    ],
+    challenge:
+      "PLACEHOLDER: Describe the specific marketing challenge for the My Dawa wellness campaign (e.g. building anticipation for a launch, driving awareness in the wellness category). Add specifics once available.",
+    approach:
+      "A teaser-poster-led campaign designed to build anticipation and awareness for the My Dawa wellness brand ahead of wider rollout.",
+    execution:
+      "Produced and distributed a series of teaser posters as the core creative asset for the campaign.",
+    results:
+      "PLACEHOLDER: Share measurable outcomes once available.",
     mediaType: "images",
   },
   {
@@ -213,13 +275,14 @@ function PlaceholderMedia({ project }: { project: Project }) {
   if (project.images && project.images.length > 1) {
     return (
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-        {project.images.map((src, i) => (
+        {project.images.map((item, i) => (
           <div
-            key={src}
-            className="relative aspect-square rounded-xl bg-charcoal/5 dark:bg-off-white/5 border border-border dark:border-border-dark overflow-hidden"
+            key={imgSrc(item)}
+            style={{ aspectRatio: imgAspect(item) }}
+            className="relative rounded-xl bg-charcoal/5 dark:bg-off-white/5 border border-border dark:border-border-dark overflow-hidden"
           >
             <Image
-              src={src}
+              src={imgSrc(item)}
               alt={`${project.title} asset ${i + 1}`}
               fill
               className="object-contain"
