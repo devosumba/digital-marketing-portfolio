@@ -62,12 +62,9 @@ export default function Hero() {
               variants={fadeUp}
               initial="hidden"
               animate="show"
-              className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-charcoal dark:text-off-white mb-6"
+              className="font-display whitespace-nowrap text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold leading-tight tracking-tight text-charcoal dark:text-off-white mb-6"
             >
-              John{" "}
-              <span className="gradient-text">Austine</span>
-              <br />
-              Osumba
+              John <span className="gradient-text">Austine</span> Osumba
             </motion.h1>
 
             <motion.p

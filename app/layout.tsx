@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "Kenya",
     "John Austine Osumba",
   ],
-  authors: [{ name: "John Austine Osumba", url: "https://linkedin.com/in/john-austine-osumba-689327207" }],
+  authors: [{ name: "John Austine Osumba", url: "https://www.linkedin.com/in/john-austine-osumba-689327207/" }],
   creator: "John Austine Osumba",
   openGraph: {
     type: "website",

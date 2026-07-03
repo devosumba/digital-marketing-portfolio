@@ -54,19 +54,11 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-5 flex items-center justify-between pointer-events-auto">
+      <div className="relative max-w-7xl mx-auto px-6 md:px-12 pt-5 flex items-center justify-end pointer-events-auto">
 
-        {/* Logo */}
-        <button
-          onClick={() => scrollTo("#hero")}
-          className="font-bold text-lg tracking-tight text-off-white dark:text-off-white hover:text-accent transition-colors"
-        >
-          JAO
-        </button>
-
-        {/* Island pill — desktop only */}
+        {/* Island pill — desktop only, centered independent of right controls width */}
         <nav
-          className="hidden md:flex items-center gap-1 px-5 py-2.5 rounded-full bg-charcoal/80 dark:bg-charcoal/90 backdrop-blur-md border border-white/10 shadow-lg"
+          className="hidden md:flex items-center gap-1 px-5 py-2.5 rounded-full bg-charcoal/80 dark:bg-charcoal/90 backdrop-blur-md border border-white/10 shadow-lg absolute left-1/2 -translate-x-1/2"
           aria-label="Main navigation"
         >
           {navLinks.map((link) => (

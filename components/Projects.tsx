@@ -54,6 +54,39 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: "back-to-school",
+    title: "Back-to-School Campaign",
+    subtitle: "Youth-Focused Brand Awareness Campaign",
+    category: "Campaigns",
+    tags: ["Campaign", "Youth Marketing", "Brand Awareness"],
+    coverColor: "from-amber-900/20 to-yellow-600/10",
+    thumbnail: "/images/projects/back-to-school/mizizi-school-essentials-cover.png",
+    images: [
+      "/images/projects/back-to-school/mizizi-school-essentials-cover.png",
+      "/images/projects/back-to-school/mizizi-vegetable-glycerine.png",
+      "/images/projects/back-to-school/mizizi-rose-water.png",
+      "/images/projects/back-to-school/mizizi-sweet-almond-oil.png",
+      "/images/projects/back-to-school/mizizi-hemp-seed-oil.png",
+      "/images/projects/back-to-school/mizizi-coconut-oil.png",
+      "/images/projects/back-to-school/mizizi-shea-butter.png",
+      "/images/projects/back-to-school/sheba-school-essentials-cover.png",
+      "/images/projects/back-to-school/sheba-instant-conditioner.png",
+      "/images/projects/back-to-school/sheba-deep-conditioner.png",
+      "/images/projects/back-to-school/sheba-curl-creme.png",
+      "/images/projects/back-to-school/sheba-wash-and-go-gel.png",
+      "/images/projects/back-to-school/sheba-moisturizing-shampoo-bar.png",
+    ],
+    challenge:
+      "Mizizi and Sheba products are widely used by school-going students, but the brands needed stronger visibility and familiarity across the different age groups and demographic segments within that audience.",
+    approach:
+      "Built a back-to-school seasonal campaign designed to sensitize and popularize the brands specifically among school-going students, tailoring messaging to resonate across different age groups and demographic segments within that broader youth audience.",
+    execution:
+      "PLACEHOLDER: Detail the specific channels and formats used (e.g. social content, in-school activations, retail tie-ins, influencer/UGC). Add specifics once available; do not invent details.",
+    results:
+      "PLACEHOLDER: Share measurable outcomes once available.",
+    mediaType: "images",
+  },
+  {
     id: "naivas",
     title: "Naivas Kikapu Kibonge — Naivas Campaign",
     subtitle: "Retail Campaign — Brand Awareness & Activation",
@@ -164,6 +197,7 @@ const projects: Project[] = [
     tags: ["Video Production", "YouTube Ads", "Google Ads", "Brand Storytelling"],
     coverColor: "from-slate-900/30 to-blue-800/10",
     thumbnail: "https://img.youtube.com/vi/JVnBDc9ovGQ/hqdefault.jpg",
+    thumbnailAspect: "480/360",
     challenge:
       "Sheth Naturals needed a brand film that could carry its story and full product range to a wider audience across enterprise-grade video channels — something polished enough to run as paid media, not just organic content.",
     approach:
@@ -174,57 +208,6 @@ const projects: Project[] = [
       "PLACEHOLDER: Share measurable outcomes — views, watch-through rate, reach, or campaign performance figures. Add real numbers once available.",
     mediaType: "video",
     videoUrl: "https://www.youtube.com/embed/JVnBDc9ovGQ",
-  },
-  {
-    id: "back-to-school",
-    title: "Back-to-School Campaign",
-    subtitle: "Youth-Focused Brand Awareness Campaign",
-    category: "Campaigns",
-    tags: ["Campaign", "Youth Marketing", "Brand Awareness"],
-    coverColor: "from-amber-900/20 to-yellow-600/10",
-    thumbnail: "/images/projects/back-to-school/mizizi-school-essentials-cover.png",
-    images: [
-      "/images/projects/back-to-school/mizizi-school-essentials-cover.png",
-      "/images/projects/back-to-school/mizizi-vegetable-glycerine.png",
-      "/images/projects/back-to-school/mizizi-rose-water.png",
-      "/images/projects/back-to-school/mizizi-sweet-almond-oil.png",
-      "/images/projects/back-to-school/mizizi-hemp-seed-oil.png",
-      "/images/projects/back-to-school/mizizi-coconut-oil.png",
-      "/images/projects/back-to-school/mizizi-shea-butter.png",
-      "/images/projects/back-to-school/sheba-school-essentials-cover.png",
-      "/images/projects/back-to-school/sheba-instant-conditioner.png",
-      "/images/projects/back-to-school/sheba-deep-conditioner.png",
-      "/images/projects/back-to-school/sheba-curl-creme.png",
-      "/images/projects/back-to-school/sheba-wash-and-go-gel.png",
-      "/images/projects/back-to-school/sheba-moisturizing-shampoo-bar.png",
-    ],
-    challenge:
-      "Mizizi and Sheba products are widely used by school-going students, but the brands needed stronger visibility and familiarity across the different age groups and demographic segments within that audience.",
-    approach:
-      "Built a back-to-school seasonal campaign designed to sensitize and popularize the brands specifically among school-going students, tailoring messaging to resonate across different age groups and demographic segments within that broader youth audience.",
-    execution:
-      "PLACEHOLDER: Detail the specific channels and formats used (e.g. social content, in-school activations, retail tie-ins, influencer/UGC). Add specifics once available; do not invent details.",
-    results:
-      "PLACEHOLDER: Share measurable outcomes once available.",
-    mediaType: "images",
-  },
-  {
-    id: "bts-design",
-    title: "Back-to-School Asset Design",
-    subtitle: "Promotional Design Showcase — Print & Digital Collateral",
-    category: "Design",
-    tags: ["Graphic Design", "Print", "Digital", "Canva", "Adobe"],
-    coverColor: "from-violet-900/20 to-purple-500/10",
-    challenge:
-      "PLACEHOLDER: Explain the design brief — brand guidelines to follow, formats needed (posters, social creatives, flyers), and production timeline.",
-    approach:
-      "PLACEHOLDER: Describe the design approach — colour palette, typography, layout decisions, and how assets were adapted across formats.",
-    execution:
-      "PLACEHOLDER: List deliverables produced — number of posters, social creatives, print sizes, and tools used (Canva, Adobe Illustrator/Photoshop).",
-    results:
-      "PLACEHOLDER: Note the impact — how designs performed in paid ads, print runs, or stakeholder approval.",
-    mediaType: "images",
-    imageCount: 6, // PLACEHOLDER: Replace with actual design files/exports
   },
   {
     id: "sense-coffee",

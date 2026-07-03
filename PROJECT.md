@@ -28,15 +28,19 @@ app/
   page.tsx        — Composes all section components in order
 
 components/
-  Navbar.tsx      — Fixed floating pill/island navbar with orange nav links, dark/light toggle
-  Hero.tsx        — Full-screen hero: headline, portrait photo, floating stat badges
+  Navbar.tsx      — Fixed floating pill/island navbar (no brandmark/logo — removed per request);
+                    pill nav is absolutely centered independent of the right-side controls width
+  Hero.tsx        — Full-screen hero: single-line "John Austine Osumba" headline (whitespace-nowrap
+                    with a responsive type scale tuned per breakpoint so it never wraps), portrait
+                    photo, floating stat badges
   About.tsx       — Bio narrative, 3 experience highlight cards, 4-stat strip
   Expertise.tsx   — 8-service card grid
   Projects.tsx    — Filterable project grid (All / Campaigns / Video/UGC / Design / Enterprise)
                     Each card opens a case-study modal (Challenge → Approach → Execution → Results)
   Skills.tsx      — Tool badges (Meta Ads, GA, SEO, Canva, Adobe, etc.) + capability chips
-  Testimonials.tsx — 3-slot quote carousel
-  Contact.tsx     — Email/LinkedIn links, CV download, contact form with client-side validation
+  Contact.tsx     — Email/LinkedIn/WhatsApp/Call icon-links + CV download. No contact form (removed
+                    per request — WhatsApp and phone numbers are never shown as visible text, only
+                    as clickable wa.me / tel: icon links)
   Footer.tsx      — Dark footer, nav links, socials, copyright
 
 public/
@@ -106,15 +110,14 @@ public/
 > Accent color and font sourced from osumbaportfolio.vercel.app CSS (dcce3c0a5a210011.css).
 
 ## Sections Built
-Page order (app/page.tsx) and nav pill order both follow: Hero → About → Work → Expertise → Skills → Testimonials → Contact.
-1. **Hero** — Name, gradient "Austine" text, subtitle, positioning statement, portrait photo, CTA buttons, floating badges (+45% / Nairobi), location tag
+Page order (app/page.tsx) and nav pill order both follow: Hero → About → Work → Expertise → Skills → Contact. (Testimonials section was removed entirely per request — component, data, and any anchor link.)
+1. **Hero** — Name (single line, "John Austine Osumba"), gradient "Austine" text, subtitle, positioning statement, portrait photo, CTA buttons, floating badges (+45% / Nairobi), location tag
 2. **About** — Narrative bio, 3 experience cards (Sheth Naturals / VW Rwanda / Working Style), 4-stat strip
-3. **Projects** ("Work", `#projects`) — 23 project cards with filterable grid + case-study modals: Naivas, Bestlady, Beauty Click, My Dawa, Enterprise Ad, Back-to-School Campaign, BTS Design, Sense Coffee, Mizizi & Sheba Roll-up Banners, and 14 individual UGC video clips (one card per clip). Ordered before Expertise per request.
+3. **Projects** ("Work", `#projects`) — 22 project cards with filterable grid + case-study modals, in this order: Back-to-School Campaign (moved to first position per request), Naivas, Bestlady, Beauty Click, My Dawa, Enterprise Ad, Sense Coffee, Mizizi & Sheba Roll-up Banners, and 14 individual UGC video clips (one card per clip, all tagged category "Video/UGC"). Ordered before Expertise per request. ("Back-to-School Asset Design" under Design was removed entirely per request — it had no real image assets, so nothing else needed cleanup.)
 4. **Expertise** (`#expertise`) — 8 service cards: Strategy, Social/Community, Paid Media, SEO/Web, Influencer/UGC, Brand Comms, Events, Research
 5. **Skills** — 8 tool badges + 8 soft-skill chips
-6. **Testimonials** — 3-slot carousel (placeholders to be filled)
-7. **Contact** — Email, LinkedIn, CV download, validated form
-8. **Footer** — Dark background, nav links, copyright
+6. **Contact** — Email, LinkedIn, WhatsApp, Call (icon-links only, no visible numbers), CV download. No contact form.
+7. **Footer** — Dark background, nav links, copyright
 
 ## Placeholders Still To Fill
 Search `// PLACEHOLDER` across the codebase. Key items:
@@ -129,9 +132,13 @@ Search `// PLACEHOLDER` across the codebase. Key items:
 - UGC Videos media (14 real clips as playable grid) ✅ Done — case-study copy (challenge/approach/execution/results) intentionally left as the original placeholders per request
 - Back-to-School Campaign case file (thumbnail + gallery + copy) ✅ Done — challenge and approach are real copy; execution and results fields intentionally still placeholders
 - Stats in `About.tsx` `stats` array
-- Testimonial quotes/names in `Testimonials.tsx`
 - CV PDF → `public/cv-john-austine-osumba.pdf`
-- Contact form endpoint → `Contact.tsx` submit handler
+
+## Contact Details (Contact.tsx / Footer.tsx)
+- Email: `johnaustineosumba@gmail.com`
+- LinkedIn: `https://www.linkedin.com/in/john-austine-osumba-689327207/` (opens in new tab)
+- WhatsApp: `https://wa.me/16462097213` — number is never shown as visible text, only as a clickable WhatsApp icon
+- Call: `tel:+254704870276` — number is never shown as visible text, only as a clickable phone icon
 
 ## Project Case-File Data Model (`Projects.tsx`)
 Each entry in the `projects` array is the single source of truth for that campaign's case file — no separate CMS/data file. Relevant fields:
@@ -141,7 +148,7 @@ Each entry in the `projects` array is the single source of truth for that campai
 - `images?: GalleryImage[]` — set only when a campaign/project has more than one distinct real asset worth showing; renders as a real gallery grid in the modal (replaces the placeholder grid entirely). `GalleryImage` is either a plain string (assumes 1:1, e.g. Bestlady/My Dawa/Naivas-style square exports) or `{ src, aspect }` for non-square sources (Beauty Click screenshots, Sense Coffee shots, roll-up banner photos), so each gallery tile fits its own image tightly instead of letterboxing it.
 - `imageCount?: number` — only consulted when neither `thumbnail` nor `images` is set, to size the placeholder gallery grid.
 - `description?: string` — for single-piece Design showcases (Sense Coffee, Roll-up Banners): the modal renders one "Overview" section instead of the 4-part Challenge/Approach/Execution/Results breakdown used by campaign case files. `challenge`/`approach`/`execution`/`results` are optional precisely so a project can use `description` instead.
-Cover/thumbnail containers default to `aspect-square` with `object-contain`, so posters render edge-to-edge with no letterboxing gap and are never cropped or stretched — as long as the chosen thumbnail is itself square (override with `thumbnailAspect`/`thumbnailFit` otherwise). For video projects (Enterprise Ad), the cover uses `aspect-video` instead.
+Cover/thumbnail containers default to `aspect-square` with `object-contain`, so posters render edge-to-edge with no letterboxing gap and are never cropped or stretched — as long as the chosen thumbnail is itself square (override with `thumbnailAspect`/`thumbnailFit` otherwise). Enterprise Ad's YouTube `hqdefault.jpg` thumbnail is 480x360 (4:3), not square, so it sets `thumbnailAspect: "480/360"` — the same gap-fix pattern used for Sense Coffee/Beauty Click — instead of being force-fit into the default square cover.
 
 ## Navbar Style
 Pill/island floating nav — dark pill container (`bg-charcoal/80 backdrop-blur`) centered, nav link text `text-accent` (orange `#FF8A33`), "Get in Touch" filled orange pill on right. No background change on scroll (always floating).

@@ -49,13 +49,13 @@ export default function Footer() {
             <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-4">Get in Touch</p>
             <div className="space-y-2">
               <a
-                href="mailto:austineosumba@gmail.com"
+                href="mailto:johnaustineosumba@gmail.com"
                 className="block text-sm text-gray-400 hover:text-off-white transition-colors"
               >
-                austineosumba@gmail.com
+                johnaustineosumba@gmail.com
               </a>
               <a
-                href="https://linkedin.com/in/john-austine-osumba-689327207"
+                href="https://www.linkedin.com/in/john-austine-osumba-689327207/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-off-white transition-colors"
