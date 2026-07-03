@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
+import Image from "next/image";
 
 type Category = "All" | "Campaigns" | "Video/UGC" | "Design" | "Enterprise";
 
@@ -12,6 +13,7 @@ interface Project {
   category: Exclude<Category, "All">;
   tags: string[];
   coverColor: string;
+  thumbnail?: string;
   challenge: string;
   approach: string;
   execution: string;
@@ -31,6 +33,7 @@ const projects: Project[] = [
     category: "Campaigns",
     tags: ["Retail", "Brand Awareness", "Social Media"],
     coverColor: "from-green-900/20 to-emerald-600/10",
+    thumbnail: "/images/projects/naivas.png",
     challenge:
       "PLACEHOLDER: Describe the marketing challenge faced for the Naivas campaign — e.g., driving footfall, seasonal awareness, competitive context.",
     approach:
@@ -187,9 +190,21 @@ function PlaceholderMedia({ project }: { project: Project }) {
   }
 
   // Images / design gallery
+  const remaining = (project.imageCount || 2) - (project.thumbnail ? 1 : 0);
   return (
     <div className="grid grid-cols-2 gap-3">
-      {Array.from({ length: project.imageCount || 2 }).map((_, i) => (
+      {project.thumbnail && (
+        <div className="col-span-2 relative aspect-[4/3] rounded-xl bg-charcoal/5 dark:bg-off-white/5 border border-border dark:border-border-dark overflow-hidden">
+          <Image
+            src={project.thumbnail}
+            alt={`${project.title} campaign asset`}
+            fill
+            className="object-contain"
+            sizes="(max-width: 768px) 100vw, 640px"
+          />
+        </div>
+      )}
+      {Array.from({ length: Math.max(remaining, 0) }).map((_, i) => (
         <div
           key={i}
           className="aspect-[4/3] rounded-xl bg-charcoal/5 dark:bg-off-white/5 border border-border dark:border-border-dark flex flex-col items-center justify-center gap-2"
@@ -298,7 +313,16 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
       <div
         className={`h-44 bg-gradient-to-br ${project.coverColor} relative overflow-hidden flex items-end p-5`}
       >
-        <span className="text-xs font-medium text-muted dark:text-gray-400 uppercase tracking-wider px-2 py-1 rounded-full bg-off-white/80 dark:bg-charcoal/80 backdrop-blur-sm">
+        {project.thumbnail && (
+          <Image
+            src={project.thumbnail}
+            alt={`${project.title} thumbnail`}
+            fill
+            className="object-contain"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        )}
+        <span className="relative text-xs font-medium text-muted dark:text-gray-400 uppercase tracking-wider px-2 py-1 rounded-full bg-off-white/80 dark:bg-charcoal/80 backdrop-blur-sm">
           {project.category}
         </span>
         <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-accent/20 dark:bg-accent/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">

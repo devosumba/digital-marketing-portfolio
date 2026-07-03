@@ -41,6 +41,10 @@ components/
 public/
   images/
     hero.jpg      — Portrait photo of John Austine Osumba (336 KB, JPEG)
+    projects/
+      naivas.png  — Naivas campaign thumbnail (3375x3375 PNG). Rendered with object-contain
+                    (card cover + modal media) so the full square image shows uncropped,
+                    letterboxed by the card's gradient background.
 ```
 
 ## Design System
