@@ -14,6 +14,7 @@ interface Project {
   tags: string[];
   coverColor: string;
   thumbnail?: string;
+  images?: string[];
   challenge: string;
   approach: string;
   execution: string;
@@ -48,20 +49,37 @@ const projects: Project[] = [
   {
     id: "bestlady",
     title: "Bestlady Campaign",
-    subtitle: "Beauty & Retail Campaign — Community & Conversion",
+    subtitle: "Market Penetration Campaign — Trial & Retention",
     category: "Campaigns",
-    tags: ["Beauty", "Retail", "Community", "Conversion"],
+    tags: ["Beauty & Personal Care", "Retail Partnership", "Brand Trial"],
     coverColor: "from-rose-900/20 to-pink-500/10",
+    thumbnail: "/images/projects/bestlady/sheba-curl-creme-500ml.png",
+    images: [
+      "/images/projects/bestlady/sheba-curl-creme-500ml.png",
+      "/images/projects/bestlady/sheba-curl-creme-200ml.png",
+      "/images/projects/bestlady/sheba-curl-creme-80ml.png",
+      "/images/projects/bestlady/mizizi-vegetable-glycerine.png",
+      "/images/projects/bestlady/mizizi-rose-water-small.png",
+      "/images/projects/bestlady/mizizi-rose-water-large.png",
+      "/images/projects/bestlady/mizizi-vitamin-e-oil.png",
+      "/images/projects/bestlady/mizizi-black-castor-oil-small.png",
+      "/images/projects/bestlady/mizizi-black-castor-oil-large.png",
+      "/images/projects/bestlady/mizizi-shea-butter-200ml.png",
+      "/images/projects/bestlady/mizizi-shea-butter-500ml.png",
+      "/images/projects/bestlady/mizizi-marula-oil.png",
+      "/images/projects/bestlady/mizizi-rosehip-oil.png",
+      "/images/projects/bestlady/mizizi-mango-butter.png",
+      "/images/projects/bestlady/mizizi-cocoa-butter.png",
+    ],
     challenge:
-      "PLACEHOLDER: Describe the specific challenge for Bestlady — audience positioning, competitive market, conversion goals.",
+      "Mizizi and Sheba needed to establish credibility as natural beauty products in the Kenyan market — a category where trust and familiarity with a brand heavily influence purchase decisions. Breaking into an already crowded beauty space required getting the products directly into the hands of the right customers.",
     approach:
-      "PLACEHOLDER: Outline the strategy — creative concept, platform selection, content pillars, and brand voice.",
+      "We partnered with Bestlady, one of Kenya's leading beauty retailers, to run a penetration campaign built around trial. Instead of leading with a discount, we offered Bestlady's existing clientele the chance to buy and experience Mizizi and Sheba at a price slightly above factory cost — enough to keep the offer accessible while building genuine familiarity with the products, with the goal of converting first-time buyers into repeat, retained customers.",
     execution:
-      "PLACEHOLDER: Walk through the execution — content types, posting cadence, paid amplification, partnerships.",
+      "Ran a limited May offer through Bestlady's customer base, positioning Mizizi and Sheba products for trial purchase at the adjusted factory-plus price point. The campaign leaned on Bestlady's established trust with its beauty-focused clientele to lower the barrier to first purchase, using the retailer's existing relationship with customers as the credibility bridge for a newer brand entering the space.",
     results:
-      "PLACEHOLDER: List campaign results — engagement rate, follower growth, conversion metrics, or revenue impact.",
+      "PLACEHOLDER: Share measurable outcomes — units sold during the offer period, customer retention/repeat purchase rate, or other KPIs. Add real figures once available.",
     mediaType: "images",
-    imageCount: 4, // PLACEHOLDER: Replace with actual campaign creatives
   },
   {
     id: "enterprise-ad",
@@ -189,22 +207,47 @@ function PlaceholderMedia({ project }: { project: Project }) {
     );
   }
 
-  // Images / design gallery
-  const remaining = (project.imageCount || 2) - (project.thumbnail ? 1 : 0);
+  // Real multi-image gallery — used when a project has more than one distinct campaign asset
+  if (project.images && project.images.length > 1) {
+    return (
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        {project.images.map((src, i) => (
+          <div
+            key={src}
+            className="relative aspect-square rounded-xl bg-charcoal/5 dark:bg-off-white/5 border border-border dark:border-border-dark overflow-hidden"
+          >
+            <Image
+              src={src}
+              alt={`${project.title} asset ${i + 1}`}
+              fill
+              className="object-contain"
+              sizes="(max-width: 640px) 50vw, 240px"
+            />
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  // Single real poster — no gallery, no placeholders
+  if (project.thumbnail) {
+    return (
+      <div className="relative aspect-square max-w-sm mx-auto w-full rounded-xl bg-charcoal/5 dark:bg-off-white/5 border border-border dark:border-border-dark overflow-hidden">
+        <Image
+          src={project.thumbnail}
+          alt={`${project.title} campaign asset`}
+          fill
+          className="object-contain"
+          sizes="(max-width: 768px) 100vw, 384px"
+        />
+      </div>
+    );
+  }
+
+  // No real assets yet — placeholder gallery
   return (
     <div className="grid grid-cols-2 gap-3">
-      {project.thumbnail && (
-        <div className="col-span-2 relative aspect-square max-w-sm mx-auto w-full rounded-xl bg-charcoal/5 dark:bg-off-white/5 border border-border dark:border-border-dark overflow-hidden">
-          <Image
-            src={project.thumbnail}
-            alt={`${project.title} campaign asset`}
-            fill
-            className="object-contain"
-            sizes="(max-width: 768px) 100vw, 384px"
-          />
-        </div>
-      )}
-      {Array.from({ length: Math.max(remaining, 0) }).map((_, i) => (
+      {Array.from({ length: project.imageCount || 2 }).map((_, i) => (
         <div
           key={i}
           className="aspect-[4/3] rounded-xl bg-charcoal/5 dark:bg-off-white/5 border border-border dark:border-border-dark flex flex-col items-center justify-center gap-2"

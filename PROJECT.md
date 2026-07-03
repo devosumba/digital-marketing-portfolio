@@ -42,9 +42,12 @@ public/
   images/
     hero.jpg      — Portrait photo of John Austine Osumba (336 KB, JPEG)
     projects/
-      naivas.png  — Naivas campaign thumbnail (3375x3375 PNG). Rendered with object-contain
-                    (card cover + modal media) so the full square image shows uncropped,
-                    letterboxed by the card's gradient background.
+      naivas.png  — Naivas campaign thumbnail (3375x3375 PNG). Single real asset — card cover
+                    and modal media both render it via object-contain, no gallery grid.
+      bestlady/   — 15 real campaign assets (Sheba Curl Crème x3 sizes + 12 Mizizi product-offer
+                    slides), all 3375x3375 PNG. Card cover uses sheba-curl-creme-500ml.png as the
+                    thumbnail; modal media renders all 15 as a real 3-col gallery grid
+                    (Project.images array), each tile object-contain, none cropped/stretched.
 ```
 
 ## Design System
@@ -79,12 +82,21 @@ Page order (app/page.tsx) and nav pill order both follow: Hero → About → Wor
 ## Placeholders Still To Fill
 Search `// PLACEHOLDER` across the codebase. Key items:
 - `public/images/hero.jpg` ✅ Done
-- Project images → `public/projects/*.jpg`
+- Naivas case file (thumbnail + copy) ✅ Done — results field intentionally still a placeholder
+- Bestlady case file (thumbnail + gallery + copy) ✅ Done — results field intentionally still a placeholder
+- Remaining project images (Enterprise Ad, Back-to-School, BTS Design, UGC Videos) → still placeholder grids in `Projects.tsx`
 - YouTube video URLs in `Projects.tsx` `projects` array
 - Stats in `About.tsx` `stats` array
 - Testimonial quotes/names in `Testimonials.tsx`
 - CV PDF → `public/cv-john-austine-osumba.pdf`
 - Contact form endpoint → `Contact.tsx` submit handler
+
+## Project Case-File Data Model (`Projects.tsx`)
+Each entry in the `projects` array is the single source of truth for that campaign's case file — no separate CMS/data file. Relevant fields:
+- `thumbnail?: string` — single hero image path, used for the card cover always, and for modal media when there's no `images` array.
+- `images?: string[]` — set only when a campaign has more than one distinct real asset worth showing; renders as a real gallery grid in the modal (replaces the placeholder grid entirely).
+- `imageCount?: number` — only consulted when neither `thumbnail` nor `images` is set, to size the placeholder gallery grid.
+Cover/thumbnail containers use `aspect-square` (matching the source assets, which are all 3375x3375) with `object-contain`, so posters render edge-to-edge with no letterboxing gap and are never cropped or stretched.
 
 ## Navbar Style
 Pill/island floating nav — dark pill container (`bg-charcoal/80 backdrop-blur`) centered, nav link text `text-accent` (orange `#FF8A33`), "Get in Touch" filled orange pill on right. No background change on scroll (always floating).
