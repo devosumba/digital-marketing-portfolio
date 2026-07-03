@@ -62,10 +62,11 @@ public/
 > Accent color and font sourced from osumbaportfolio.vercel.app CSS (dcce3c0a5a210011.css).
 
 ## Sections Built
+Page order (app/page.tsx) and nav pill order both follow: Hero → About → Work → Expertise → Skills → Testimonials → Contact.
 1. **Hero** — Name, gradient "Austine" text, subtitle, positioning statement, portrait photo, CTA buttons, floating badges (+45% / Nairobi), location tag
 2. **About** — Narrative bio, 3 experience cards (Sheth Naturals / VW Rwanda / Working Style), 4-stat strip
-3. **Expertise** — 8 service cards: Strategy, Social/Community, Paid Media, SEO/Web, Influencer/UGC, Brand Comms, Events, Research
-4. **Projects** — 6 projects with filterable grid + case-study modals: Naivas, Bestlady, Enterprise Ad, Back-to-School Campaign, BTS Design, UGC Videos
+3. **Projects** ("Work", `#projects`) — 6 projects with filterable grid + case-study modals: Naivas, Bestlady, Enterprise Ad, Back-to-School Campaign, BTS Design, UGC Videos. Ordered before Expertise per request.
+4. **Expertise** (`#expertise`) — 8 service cards: Strategy, Social/Community, Paid Media, SEO/Web, Influencer/UGC, Brand Comms, Events, Research
 5. **Skills** — 8 tool badges + 8 soft-skill chips
 6. **Testimonials** — 3-slot carousel (placeholders to be filled)
 7. **Contact** — Email, LinkedIn, CV download, validated form
