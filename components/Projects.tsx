@@ -178,20 +178,35 @@ const projects: Project[] = [
   {
     id: "back-to-school",
     title: "Back-to-School Campaign",
-    subtitle: "Seasonal Multi-Channel Campaign — Awareness & Sales",
+    subtitle: "Youth-Focused Brand Awareness Campaign",
     category: "Campaigns",
-    tags: ["Seasonal", "Multi-Channel", "Education"],
+    tags: ["Campaign", "Youth Marketing", "Brand Awareness"],
     coverColor: "from-amber-900/20 to-yellow-600/10",
+    thumbnail: "/images/projects/back-to-school/mizizi-school-essentials-cover.png",
+    images: [
+      "/images/projects/back-to-school/mizizi-school-essentials-cover.png",
+      "/images/projects/back-to-school/mizizi-vegetable-glycerine.png",
+      "/images/projects/back-to-school/mizizi-rose-water.png",
+      "/images/projects/back-to-school/mizizi-sweet-almond-oil.png",
+      "/images/projects/back-to-school/mizizi-hemp-seed-oil.png",
+      "/images/projects/back-to-school/mizizi-coconut-oil.png",
+      "/images/projects/back-to-school/mizizi-shea-butter.png",
+      "/images/projects/back-to-school/sheba-school-essentials-cover.png",
+      "/images/projects/back-to-school/sheba-instant-conditioner.png",
+      "/images/projects/back-to-school/sheba-deep-conditioner.png",
+      "/images/projects/back-to-school/sheba-curl-creme.png",
+      "/images/projects/back-to-school/sheba-wash-and-go-gel.png",
+      "/images/projects/back-to-school/sheba-moisturizing-shampoo-bar.png",
+    ],
     challenge:
-      "PLACEHOLDER: Define the seasonal challenge — competitive window, audience (parents/students), budget or timeline constraints.",
+      "Mizizi and Sheba products are widely used by school-going students, but the brands needed stronger visibility and familiarity across the different age groups and demographic segments within that audience.",
     approach:
-      "PLACEHOLDER: Describe the multi-channel strategy — which channels were prioritized and why, content themes, messaging hierarchy.",
+      "Built a back-to-school seasonal campaign designed to sensitize and popularize the brands specifically among school-going students, tailoring messaging to resonate across different age groups and demographic segments within that broader youth audience.",
     execution:
-      "PLACEHOLDER: Detail channel breakdown — social posts, email newsletters, paid ads, in-store or OOH elements, influencer content.",
+      "PLACEHOLDER: Detail the specific channels and formats used (e.g. social content, in-school activations, retail tie-ins, influencer/UGC). Add specifics once available; do not invent details.",
     results:
-      "PLACEHOLDER: Campaign outcomes — reach, sales uplift, newsletter open rates, conversion data.",
+      "PLACEHOLDER: Share measurable outcomes once available.",
     mediaType: "images",
-    imageCount: 3, // PLACEHOLDER: Replace with actual campaign assets
   },
   {
     id: "bts-design",

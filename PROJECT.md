@@ -60,6 +60,11 @@ public/
       sense-coffee/ — 5 brand/promo design shots (packaging, business cards, storefront sign),
                     mixed landscape aspect ratios. Thumbnail is coffee-bags-trio.jpg with
                     thumbnailAspect "749/421" so the card cover isn't forced to a square crop.
+      back-to-school/ — 13 real campaign assets (2 brand "School Essentials" cover slides +
+                    7 Mizizi product-offer slides + 5 Sheba product-offer slides), all 3375x3375
+                    PNG, no exact duplicates. Thumbnail is mizizi-school-essentials-cover.png;
+                    modal media renders all 13 as a real 3-col gallery grid (Project.images array),
+                    each tile object-contain, none cropped/stretched.
       mizizi-sheba-rollup-banners/ — 6 distinct roll-up banner designs (deduped from 14 source
                     mockup renders — most were duplicate exports of the same ~6 designs at two
                     slightly different template dimensions). All very tall/narrow (~0.46 aspect,
@@ -116,7 +121,7 @@ Search `// PLACEHOLDER` across the codebase. Key items:
 - Sense Coffee case file (thumbnail + gallery) ✅ Done — description is intentionally still a placeholder (no brief/deliverables provided)
 - Mizizi & Sheba Roll-up Banners case file (thumbnail + gallery + copy) ✅ Done
 - UGC Videos media (14 real clips as playable grid) ✅ Done — case-study copy (challenge/approach/execution/results) intentionally left as the original placeholders per request
-- Remaining project images (Back-to-School Campaign) → still a placeholder grid in `Projects.tsx`
+- Back-to-School Campaign case file (thumbnail + gallery + copy) ✅ Done — challenge and approach are real copy; execution and results fields intentionally still placeholders
 - Stats in `About.tsx` `stats` array
 - Testimonial quotes/names in `Testimonials.tsx`
 - CV PDF → `public/cv-john-austine-osumba.pdf`
