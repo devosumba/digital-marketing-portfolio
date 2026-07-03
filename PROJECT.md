@@ -116,21 +116,12 @@ Page order (app/page.tsx) and nav pill order both follow: Hero → About → Wor
 3. **Projects** ("Work", `#projects`) — 22 project cards with filterable grid + case-study modals, in this order: Back-to-School Campaign (moved to first position per request), Naivas, Bestlady, Beauty Click, My Dawa, Enterprise Ad, Sense Coffee, Mizizi & Sheba Roll-up Banners, and 14 individual UGC video clips (one card per clip, all tagged category "Video/UGC"). Ordered before Expertise per request. ("Back-to-School Asset Design" under Design was removed entirely per request — it had no real image assets, so nothing else needed cleanup.)
 4. **Expertise** (`#expertise`) — 8 service cards: Strategy, Social/Community, Paid Media, SEO/Web, Influencer/UGC, Brand Comms, Events, Research
 5. **Skills** — 8 tool badges + 8 soft-skill chips
-6. **Contact** — Email, LinkedIn, WhatsApp, Call (icon-links only, no visible numbers), CV download. No contact form.
+6. **Contact** — Email, LinkedIn, WhatsApp, Call (icon-links only, no visible numbers) in a 2-column grid, CV download. No contact form.
 7. **Footer** — Dark background, nav links, copyright
 
 ## Placeholders Still To Fill
-Search `// PLACEHOLDER` across the codebase. Key items:
+Every project case-study field (challenge/approach/execution/results/description) across all 22 project cards now has real, written copy — no `PLACEHOLDER:` case-study text remains in `Projects.tsx` (confirmed by search). Per the site owner's instruction, qualitative outcome copy was generated for fields that previously had no real data (e.g. results/challenge for Naivas, Bestlady, Beauty Click, My Dawa, Enterprise Ad, Back-to-School, Sense Coffee's description, and all 14 UGC video case studies) — deliberately without fabricating specific numbers/KPIs, since actual performance figures weren't supplied. Remaining items:
 - `public/images/hero.jpg` ✅ Done
-- Naivas case file (thumbnail + copy) ✅ Done — results field intentionally still a placeholder
-- Bestlady case file (thumbnail + gallery + copy) ✅ Done — results field intentionally still a placeholder
-- Enterprise Ad case file (YouTube embed `JVnBDc9ovGQ` + copy) ✅ Done — results field intentionally still a placeholder
-- Beauty Click case file (thumbnail + gallery + copy) ✅ Done — results field intentionally still a placeholder
-- My Dawa case file (thumbnail + gallery + copy) ✅ Done — challenge and results fields intentionally still placeholders
-- Sense Coffee case file (thumbnail + gallery) ✅ Done — description is intentionally still a placeholder (no brief/deliverables provided)
-- Mizizi & Sheba Roll-up Banners case file (thumbnail + gallery + copy) ✅ Done
-- UGC Videos media (14 real clips as playable grid) ✅ Done — case-study copy (challenge/approach/execution/results) intentionally left as the original placeholders per request
-- Back-to-School Campaign case file (thumbnail + gallery + copy) ✅ Done — challenge and approach are real copy; execution and results fields intentionally still placeholders
 - Stats in `About.tsx` `stats` array
 - CV PDF → `public/cv-john-austine-osumba.pdf`
 

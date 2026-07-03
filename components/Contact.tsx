@@ -27,13 +27,13 @@ export default function Contact() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="max-w-xl space-y-8"
+          className="max-w-2xl space-y-8"
         >
           <p className="text-lg text-charcoal/80 dark:text-off-white/70 leading-relaxed">
             Whether you have a campaign to launch, a brand to grow, or a team that needs a skilled marketing hand — I&apos;d love to hear from you.
           </p>
 
-          <div className="space-y-4">
+          <div className="grid grid-cols-2 gap-4">
             <a
               href="mailto:johnaustineosumba@gmail.com"
               className="flex items-center gap-4 p-4 rounded-xl bg-off-white dark:bg-charcoal border border-border dark:border-border-dark hover:border-accent/40 dark:hover:border-accent/50 transition-all group"

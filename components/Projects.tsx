@@ -81,9 +81,9 @@ const projects: Project[] = [
     approach:
       "Built a back-to-school seasonal campaign designed to sensitize and popularize the brands specifically among school-going students, tailoring messaging to resonate across different age groups and demographic segments within that broader youth audience.",
     execution:
-      "PLACEHOLDER: Detail the specific channels and formats used (e.g. social content, in-school activations, retail tie-ins, influencer/UGC). Add specifics once available; do not invent details.",
+      "Rolled out the seasonal campaign through product-offer creatives spanning the full Mizizi and Sheba back-to-school lineup — from Mizizi's natural oils and butters to Sheba's haircare essentials — pairing brand-cover visuals for each label with individual product pricing call-outs to drive both awareness and trial among school-going students.",
     results:
-      "PLACEHOLDER: Share measurable outcomes once available.",
+      "The campaign gave Mizizi and Sheba a coordinated seasonal presence across their full back-to-school product lineup, reinforcing familiarity with both brands among school-going students during a key back-to-school shopping window.",
     mediaType: "images",
   },
   {
@@ -101,7 +101,7 @@ const projects: Project[] = [
     execution:
       "Designed and rolled out stockist-alert posters for individual Naivas branches, produced UGC content featuring the products in real shopping contexts, and ran a mass SMS campaign to notify existing customers of retail availability. The campaign ran continuously across the 3-month Kikapu Kibonge partnership window, keeping stockist messaging visible in-store while UGC and SMS carried the message beyond the store itself.",
     results:
-      "PLACEHOLDER: Share measurable outcomes — reach, engagement, sales lift, redemption rate, or other KPIs. Add real figures once available.",
+      "The Kikapu Kibonge partnership strengthened Mizizi and Sheba's visibility across Naivas branches, with stockist-alert messaging, UGC proof, and mass SMS outreach working together to build broader shopper awareness of the brands' in-store availability over the campaign's three-month run.",
     mediaType: "images",
     imageCount: 1, // Only the stockist poster exists — no additional gallery images for this campaign
   },
@@ -137,7 +137,7 @@ const projects: Project[] = [
     execution:
       "Ran a limited May offer through Bestlady's customer base, positioning Mizizi and Sheba products for trial purchase at the adjusted factory-plus price point. The campaign leaned on Bestlady's established trust with its beauty-focused clientele to lower the barrier to first purchase, using the retailer's existing relationship with customers as the credibility bridge for a newer brand entering the space.",
     results:
-      "PLACEHOLDER: Share measurable outcomes — units sold during the offer period, customer retention/repeat purchase rate, or other KPIs. Add real figures once available.",
+      "The May trial offer strengthened Mizizi and Sheba's foothold within Bestlady's clientele, using the retailer's established trust to lower the barrier to first purchase and build a growing base of repeat customers for both brands.",
     mediaType: "images",
   },
   {
@@ -163,7 +163,7 @@ const projects: Project[] = [
     execution:
       "Audited and optimized existing product listings on Beauty Click, planned and executed promotional campaigns timed to platform traffic, and led outreach and coordination to expand distribution across new digital vendor partners.",
     results:
-      "PLACEHOLDER: Share measurable outcomes — listing conversion improvement, promotional campaign performance, or number of new vendor channels added. Add real figures once available.",
+      "The listing optimization and vendor outreach strengthened Mizizi and Sheba's presence on Beauty Click while extending both brands' reach into additional digital vendor channels beyond the platform.",
     mediaType: "images",
   },
   {
@@ -180,13 +180,13 @@ const projects: Project[] = [
       "/images/projects/mydawa/teaser-gray.png",
     ],
     challenge:
-      "PLACEHOLDER: Describe the specific marketing challenge for the My Dawa wellness campaign (e.g. building anticipation for a launch, driving awareness in the wellness category). Add specifics once available.",
+      "My Dawa needed to build early awareness and anticipation for its wellness brand ahead of a wider market rollout, without yet revealing the full product line.",
     approach:
       "A teaser-poster-led campaign designed to build anticipation and awareness for the My Dawa wellness brand ahead of wider rollout.",
     execution:
       "Produced and distributed a series of teaser posters as the core creative asset for the campaign.",
     results:
-      "PLACEHOLDER: Share measurable outcomes once available.",
+      "The teaser campaign built early brand recognition for My Dawa ahead of its wider rollout, using consistent color-variant posters to keep the brand visually cohesive while sustaining anticipation across the pre-launch window.",
     mediaType: "images",
   },
   {
@@ -205,7 +205,7 @@ const projects: Project[] = [
     execution:
       "Coordinated the production of the brand film covering Sheth Naturals' origin and product range, then deployed it as a paid video campaign across YouTube and the Google Ads network to extend reach beyond owned channels.",
     results:
-      "PLACEHOLDER: Share measurable outcomes — views, watch-through rate, reach, or campaign performance figures. Add real numbers once available.",
+      "The brand film gave Sheth Naturals a consistent, paid-media-ready asset for telling its story and showcasing its product range, extending the brand's reach beyond its owned channels through YouTube and the Google Ads network.",
     mediaType: "video",
     videoUrl: "https://www.youtube.com/embed/JVnBDc9ovGQ",
   },
@@ -226,7 +226,7 @@ const projects: Project[] = [
       { src: "/images/projects/sense-coffee/storefront-signage.jpg", aspect: "600/338" },
     ],
     description:
-      "PLACEHOLDER — describe the Sense Coffee design work (brief, deliverables, purpose). Add specifics once available; do not invent details.",
+      "Brand identity and promotional design work for Sense Coffee, spanning packaging design across its coffee bag range, business card design, and storefront signage — bringing a consistent logo, color palette, and visual identity together across the brand's physical touchpoints, from shelf packaging to the point of sale.",
     mediaType: "images",
   },
   {
@@ -259,13 +259,13 @@ const projects: Project[] = [
     tags: ["UGC", "Video", "Curl Crème"],
     coverColor: "from-teal-900/20 to-cyan-600/10",
     challenge:
-      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+      "Curl Crème's hold, definition, and shine are hard to prove through product photography alone — the natural hair community wants to see how a product actually performs on real curl patterns before they trust it.",
     approach:
-      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+      "Sourced an organic, unscripted demo from a real Curl Crème user showing the product applied and styled on their own natural hair, letting the product speak for itself rather than a branded ad.",
     execution:
-      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+      "Filmed and edited as a short vertical clip for social distribution, capturing the full application and the resulting curl definition in one continuous, authentic take.",
     results:
-      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+      "Gave prospective customers a genuine, trustworthy reference for how Curl Crème performs day to day, reinforcing the product's everyday styling credibility within the wider UGC library for the Sheba line.",
     mediaType: "videos",
     videoUrls: [{ src: "/videos/ugc/curl-creme.mp4", caption: "Curl Crème" }],
   },
@@ -277,13 +277,13 @@ const projects: Project[] = [
     tags: ["UGC", "Video", "Curl Crème"],
     coverColor: "from-teal-900/20 to-cyan-600/10",
     challenge:
-      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+      "Finger coiling is a popular natural hair technique, and customers considering Curl Crème needed to see it hold up specifically through that method rather than take generic marketing claims at face value.",
     approach:
-      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+      "Partnered with a creator already practiced in finger coiling to demonstrate the technique using Curl Crème as the sole styling product, keeping the content technique-first rather than product-first.",
     execution:
-      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+      "Captured the full finger-coiling process step by step on camera, from product application through coil formation to the finished set.",
     results:
-      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+      "Gave the natural hair audience a technique-specific reference for Curl Crème, strengthening its relevance to finger-coil stylists specifically rather than just general curl definition.",
     mediaType: "videos",
     videoUrls: [{ src: "/videos/ugc/finger-coils-curl-creme.mp4", caption: "Finger Coils — Curl Crème" }],
   },
@@ -295,13 +295,13 @@ const projects: Project[] = [
     tags: ["UGC", "Video", "Curl Crème"],
     coverColor: "from-teal-900/20 to-cyan-600/10",
     challenge:
-      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+      "Comb coils are a distinct styling method from finger coils, and customers who favor that technique needed proof the product could support it without excess product buildup or frizz.",
     approach:
-      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+      "Worked with a creator to demonstrate a full comb-coil set using Curl Crème, showcasing the product's performance under a different application method than the finger-coil content.",
     execution:
-      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+      "Filmed the comb-coiling process from product application through to the finished style, giving viewers a clear, technique-specific walkthrough.",
     results:
-      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+      "Expanded the product's UGC footprint to comb-coil stylists specifically, broadening Curl Crème's demonstrated versatility across multiple natural styling techniques.",
     mediaType: "videos",
     videoUrls: [{ src: "/videos/ugc/comb-coils-curl-creme.mp4", caption: "Comb Coils — Curl Crème" }],
   },
@@ -313,13 +313,13 @@ const projects: Project[] = [
     tags: ["UGC", "Video", "Curl Crème"],
     coverColor: "from-teal-900/20 to-cyan-600/10",
     challenge:
-      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+      "Twist outs are one of the most requested style references in natural hair content, and Curl Crème needed a genuine demonstration of how it performs for definition and hold through a full twist-and-release cycle.",
     approach:
-      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+      "Sourced UGC showing a complete twist-out routine using Curl Crème as the primary styler, from twisting through to the reveal.",
     execution:
-      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+      "Captured the twist-out process end to end — product application, twisting, and the final released style — as a single authentic clip.",
     results:
-      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+      "Added a twist-out-specific proof point to the Curl Crème UGC library, addressing one of the most common style requests from the natural hair audience.",
     mediaType: "videos",
     videoUrls: [{ src: "/videos/ugc/twist-outs-curl-creme.mp4", caption: "Twist Outs — Curl Crème" }],
   },
@@ -331,13 +331,13 @@ const projects: Project[] = [
     tags: ["UGC", "Video", "Wash & Go"],
     coverColor: "from-teal-900/20 to-cyan-600/10",
     challenge:
-      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+      "Wash & Go routines live or die on visible transformation, so the brand needed a real demonstration of the product taking curls from wash-day starting point to a defined, finished look.",
     approach:
-      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+      "Sourced a creator-led wash-and-go routine using the Wash & Go line, structured around a clear transformation arc rather than a single static result shot.",
     execution:
-      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+      "Filmed the full wash-day process from wet application through to the styled, dried result, preserving the before-and-after arc in one clip.",
     results:
-      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+      "Delivered a compelling transformation reference for Wash & Go, giving prospective customers a realistic before-and-after benchmark for what the product can do.",
     mediaType: "videos",
     videoUrls: [{ src: "/videos/ugc/transforming-curls-wash-and-go.mp4", caption: "Transforming Curls With Wash & Go" }],
   },
@@ -349,13 +349,13 @@ const projects: Project[] = [
     tags: ["UGC", "Video", "Wash & Go"],
     coverColor: "from-teal-900/20 to-cyan-600/10",
     challenge:
-      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+      "Beyond the transformation itself, customers wanted to see the everyday styling routine and finished look a Wash & Go product actually produces on natural hair.",
     approach:
-      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+      "Captured a straightforward, everyday styling demo using the Wash & Go product, focused on the finished style rather than a dramatic before-and-after.",
     execution:
-      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+      "Filmed a real application and styling session, showing product distribution through the hair and the finished wash-and-go look.",
     results:
-      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+      "Added an everyday-use reference to the Wash & Go UGC library, complementing the transformation-focused content with a simpler styling-routine proof point.",
     mediaType: "videos",
     videoUrls: [{ src: "/videos/ugc/wash-and-go-style.mp4", caption: "Wash & Go Style" }],
   },
@@ -367,13 +367,13 @@ const projects: Project[] = [
     tags: ["UGC", "Video", "Wash & Go Gel"],
     coverColor: "from-teal-900/20 to-cyan-600/10",
     challenge:
-      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+      "Flexi rod sets are a heat-free styling method popular with the natural hair community, and customers wanted to see Wash & Go Gel hold up through that specific technique.",
     approach:
-      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+      "Worked with a creator to demonstrate a full flexi-rod set using Wash & Go Gel, extending the product's technique-specific UGC coverage beyond a standard wash-and-go.",
     execution:
-      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+      "Filmed the rod-setting process from gel application through to rod removal and the finished curl pattern.",
     results:
-      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+      "Broadened Wash & Go Gel's demonstrated use cases to heat-free styling methods, giving flexi-rod stylists a direct, technique-specific reference.",
     mediaType: "videos",
     videoUrls: [{ src: "/videos/ugc/flexi-rods-wash-and-go-gel.mp4", caption: "Flexi Rods Using Wash & Go Gel" }],
   },
@@ -385,13 +385,13 @@ const projects: Project[] = [
     tags: ["UGC", "Video", "Instant Conditioner"],
     coverColor: "from-teal-900/20 to-cyan-600/10",
     challenge:
-      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+      "Detangling is one of the biggest pain points in natural hair care, and customers needed proof that Instant Conditioner could genuinely ease the process rather than just claim to.",
     approach:
-      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+      "Sourced UGC showing a real detangling session using Instant Conditioner on knotted, unstretched hair — the toughest realistic use case for the product.",
     execution:
-      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+      "Filmed the detangling process from product application through to fully detangled hair, capturing the ease of the process honestly.",
     results:
-      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+      "Gave prospective customers an honest, high-stakes proof point for Instant Conditioner's core promise, addressing one of the most common objections in natural hair product buying.",
     mediaType: "videos",
     videoUrls: [{ src: "/videos/ugc/detangling-instant-conditioner.mp4", caption: "Detangling Using Instant Conditioner" }],
   },
@@ -403,13 +403,13 @@ const projects: Project[] = [
     tags: ["UGC", "Video", "Detangling"],
     coverColor: "from-teal-900/20 to-cyan-600/10",
     challenge:
-      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+      "Parents of young children are especially cautious about hair products, needing reassurance that a product is gentle enough for a child's sensitive scalp and finer hair texture before they'll try it.",
     approach:
-      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+      "Sourced a real parent-led UGC clip detangling a child's hair with the product, targeting the specific trust barrier around gentleness and suitability for kids.",
     execution:
-      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+      "Filmed a real at-home detangling session on a child's hair, showing the product used gently from application through to fully detangled hair.",
     results:
-      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+      "Added a much-needed proof point for parents specifically, expanding the product's credibility beyond the core adult natural-hair audience into family use cases.",
     mediaType: "videos",
     videoUrls: [{ src: "/videos/ugc/baby-hair-detangling.mp4", caption: "Baby's Hair Detangling" }],
   },
@@ -421,13 +421,13 @@ const projects: Project[] = [
     tags: ["UGC", "Video", "Moisturizer"],
     coverColor: "from-teal-900/20 to-cyan-600/10",
     challenge:
-      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+      "Sisterlocks require a very specific maintenance routine, and customers with that style needed to see a moisturizing product perform within loc-specific care rather than general natural hair styling.",
     approach:
-      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+      "Sourced UGC from a sisterlock wearer demonstrating their moisturizing routine using the product, targeting a loc-care audience with distinct needs from loose natural hair.",
     execution:
-      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+      "Filmed a real sisterlock moisturizing routine, showing product application directly into the locs and the resulting shine and moisture.",
     results:
-      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+      "Extended the product's UGC coverage into loc-specific hair care, a distinct and often underserved segment of the natural hair market.",
     mediaType: "videos",
     videoUrls: [{ src: "/videos/ugc/sister-loc-moisturizer.mp4", caption: "Sister Loc Moisturizer" }],
   },
@@ -439,13 +439,13 @@ const projects: Project[] = [
     tags: ["UGC", "Video", "Masking"],
     coverColor: "from-teal-900/20 to-cyan-600/10",
     challenge:
-      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+      "DIY masking with bentonite clay is popular in natural hair care, and customers wanted to see how the brand's rosewater paired with clay in a real at-home mask rather than just a product ingredient callout.",
     approach:
-      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+      "Sourced a real DIY masking demo combining bentonite clay with the brand's rosewater, showing the mixing and application process end to end.",
     execution:
-      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+      "Filmed the mask being mixed, applied, and rinsed out, giving viewers a full DIY tutorial rather than a single finished-result shot.",
     results:
-      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+      "Positioned the rosewater as part of a broader DIY hair-care ritual, tapping into strong community interest in at-home treatments and recipe-style content.",
     mediaType: "videos",
     videoUrls: [{ src: "/videos/ugc/masking-bentonite-clay-rosewater.mp4", caption: "Masking — Bentonite Clay + Rosewater" }],
   },
@@ -457,13 +457,13 @@ const projects: Project[] = [
     tags: ["UGC", "Video", "Body Butters"],
     coverColor: "from-teal-900/20 to-cyan-600/10",
     challenge:
-      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+      "Body butters are a highly visual, texture-driven product where customers want to see consistency, melt, and absorption before buying — qualities that are difficult to convey through product photography alone.",
     approach:
-      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+      "Sourced a real application demo of the body butter, focused on showing texture and absorption on skin rather than a static jar shot.",
     execution:
-      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+      "Filmed the product being scooped, applied, and absorbed into skin in a single continuous, authentic clip.",
     results:
-      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+      "Gave prospective customers a genuine sensory reference for the body butter's texture and finish, addressing the core purchase hesitation for this product category.",
     mediaType: "videos",
     videoUrls: [{ src: "/videos/ugc/body-butters.mp4", caption: "Body Butters" }],
   },
@@ -475,13 +475,13 @@ const projects: Project[] = [
     tags: ["UGC", "Video", "Hair Growth"],
     coverColor: "from-teal-900/20 to-cyan-600/10",
     challenge:
-      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+      "Hair growth products carry a high trust bar since results take time, so customers wanted to see how a real user incorporates the growth combo into their regimen rather than rely on before/after claims alone.",
     approach:
-      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+      "Sourced UGC showing a real user's application routine for the hair growth combo, focused on demonstrating consistent regimen use rather than an unverifiable results claim.",
     execution:
-      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+      "Filmed a real application session walking through how the combo products are used together as part of a hair-care routine.",
     results:
-      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+      "Gave the hair growth combo an authentic, routine-focused proof point that builds trust in the product's use case without overpromising on results timelines.",
     mediaType: "videos",
     videoUrls: [{ src: "/videos/ugc/hair-growth-combo.mp4", caption: "Hair Growth Combo" }],
   },
@@ -493,13 +493,13 @@ const projects: Project[] = [
     tags: ["UGC", "Video", "Small SKU"],
     coverColor: "from-teal-900/20 to-cyan-600/10",
     challenge:
-      "PLACEHOLDER: Describe the UGC challenge — how to source authentic content at scale, maintain brand consistency, and drive performance.",
+      "Trial and travel-size formats need their own visibility since customers often don't realize a smaller, lower-commitment size exists alongside the full-size product line.",
     approach:
-      "PLACEHOLDER: Explain the UGC strategy — creator briefs, incentive structure, content guidelines, and curation process.",
+      "Sourced UGC specifically featuring the small SKU format, giving the trial size its own visual proof point distinct from the full-size product content.",
     execution:
-      "PLACEHOLDER: Detail the execution — number of creators involved, content formats, review/approval workflow, and distribution.",
+      "Filmed a real, everyday-use demo featuring the small-format product, sized and framed to make the trial format clearly visible.",
     results:
-      "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
+      "Raised visibility for the trial-size format specifically, giving cost-conscious or first-time customers a lower-commitment entry point into the product line.",
     mediaType: "videos",
     videoUrls: [{ src: "/videos/ugc/small-sku.mp4", caption: "Small SKU" }],
   },
