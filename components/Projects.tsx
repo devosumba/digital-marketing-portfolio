@@ -43,7 +43,7 @@ const projects: Project[] = [
     results:
       "PLACEHOLDER: Share measurable outcomes — reach, engagement, sales lift, redemption rate, or other KPIs. Add real figures once available.",
     mediaType: "images",
-    imageCount: 4, // PLACEHOLDER: Replace with actual image gallery
+    imageCount: 1, // Only the stockist poster exists — no additional gallery images for this campaign
   },
   {
     id: "bestlady",
