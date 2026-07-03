@@ -44,8 +44,10 @@ interface Project {
   execution?: string;
   results?: string;
   mediaType: "images" | "video" | "videos";
-  // PLACEHOLDER: videoUrl, imageUrls will be filled with real assets
   videoUrl?: string;
+  // Real UGC clips — { src, caption } so each tile can show its real filename-derived
+  // label without inventing per-video marketing copy.
+  videoUrls?: { src: string; caption: string }[];
   imageCount?: number;
   videoCount?: number;
 }
@@ -267,7 +269,22 @@ const projects: Project[] = [
     results:
       "PLACEHOLDER: UGC performance data — views, shares, conversion impact, cost-per-engagement vs. branded content.",
     mediaType: "videos",
-    videoCount: 4, // PLACEHOLDER: Replace with actual UGC video embed URLs
+    videoUrls: [
+      { src: "/videos/ugc/curl-creme.mp4", caption: "Curl Crème" },
+      { src: "/videos/ugc/finger-coils-curl-creme.mp4", caption: "Finger Coils — Curl Crème" },
+      { src: "/videos/ugc/comb-coils-curl-creme.mp4", caption: "Comb Coils — Curl Crème" },
+      { src: "/videos/ugc/twist-outs-curl-creme.mp4", caption: "Twist Outs — Curl Crème" },
+      { src: "/videos/ugc/transforming-curls-wash-and-go.mp4", caption: "Transforming Curls With Wash & Go" },
+      { src: "/videos/ugc/wash-and-go-style.mp4", caption: "Wash & Go Style" },
+      { src: "/videos/ugc/flexi-rods-wash-and-go-gel.mp4", caption: "Flexi Rods Using Wash & Go Gel" },
+      { src: "/videos/ugc/detangling-instant-conditioner.mp4", caption: "Detangling Using Instant Conditioner" },
+      { src: "/videos/ugc/baby-hair-detangling.mp4", caption: "Baby's Hair Detangling" },
+      { src: "/videos/ugc/sister-loc-moisturizer.mp4", caption: "Sister Loc Moisturizer" },
+      { src: "/videos/ugc/masking-bentonite-clay-rosewater.mp4", caption: "Masking — Bentonite Clay + Rosewater" },
+      { src: "/videos/ugc/body-butters.mp4", caption: "Body Butters" },
+      { src: "/videos/ugc/hair-growth-combo.mp4", caption: "Hair Growth Combo" },
+      { src: "/videos/ugc/small-sku.mp4", caption: "Small SKU" },
+    ],
   },
 ];
 
@@ -304,6 +321,29 @@ function PlaceholderMedia({ project }: { project: Project }) {
   }
 
   if (project.mediaType === "videos") {
+    if (project.videoUrls && project.videoUrls.length > 0) {
+      return (
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          {project.videoUrls.map((v) => (
+            <div key={v.src} className="flex flex-col gap-1.5">
+              <div className="aspect-[9/16] rounded-xl overflow-hidden bg-charcoal/5 dark:bg-off-white/5 border border-border dark:border-border-dark">
+                <video
+                  src={v.src}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full h-full object-contain bg-charcoal"
+                >
+                  Your browser does not support inline video playback.
+                </video>
+              </div>
+              <p className="text-[10px] text-muted dark:text-gray-500 text-center px-1 leading-snug">{v.caption}</p>
+            </div>
+          ))}
+        </div>
+      );
+    }
+
     return (
       <div className="grid grid-cols-2 gap-3">
         {Array.from({ length: project.videoCount || 2 }).map((_, i) => (

@@ -67,6 +67,13 @@ public/
                     card cover keeps the standard height (matches sibling cards) and centers a
                     width-constrained box sized to thumbnailAspect inside it, rather than letting
                     the aspect ratio blow out the card's height.
+
+  videos/
+    ugc/          — 14 real UGC clips (TikTok-style, vertical 9:16, phone-recorded mp4s).
+                    Rendered as native <video controls playsInline> tiles in a responsive
+                    3-col (2-col on mobile) grid via Project.videoUrls ({ src, caption }),
+                    replacing the old icon-placeholder grid. Captions are cleaned-up labels
+                    derived from the real source filenames, not invented copy.
 ```
 
 ## Design System
@@ -108,7 +115,8 @@ Search `// PLACEHOLDER` across the codebase. Key items:
 - My Dawa case file (thumbnail + gallery + copy) ✅ Done — challenge and results fields intentionally still placeholders
 - Sense Coffee case file (thumbnail + gallery) ✅ Done — description is intentionally still a placeholder (no brief/deliverables provided)
 - Mizizi & Sheba Roll-up Banners case file (thumbnail + gallery + copy) ✅ Done
-- Remaining project images (Back-to-School, UGC Videos) → still placeholder grids in `Projects.tsx`
+- UGC Videos media (14 real clips as playable grid) ✅ Done — case-study copy (challenge/approach/execution/results) intentionally left as the original placeholders per request
+- Remaining project images (Back-to-School Campaign) → still a placeholder grid in `Projects.tsx`
 - Stats in `About.tsx` `stats` array
 - Testimonial quotes/names in `Testimonials.tsx`
 - CV PDF → `public/cv-john-austine-osumba.pdf`
