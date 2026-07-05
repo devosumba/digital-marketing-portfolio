@@ -113,10 +113,9 @@ export default function Contact() {
 
           {/* Download CV */}
           <div className="pt-2">
-            {/* PLACEHOLDER: Replace href with actual CV file URL once uploaded to /public/cv-john-austine-osumba.pdf */}
             <a
-              href="/cv-john-austine-osumba.pdf" // PLACEHOLDER: Replace with actual CV file path or URL
-              download
+              href="/cv/John-Austine-Osumba-CV.pdf"
+              download="John-Austine-Osumba-CV.pdf"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border-2 border-charcoal dark:border-off-white text-charcoal dark:text-off-white font-medium text-sm hover:bg-charcoal hover:text-off-white dark:hover:bg-off-white dark:hover:text-charcoal transition-all"
             >
               <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">

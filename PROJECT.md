@@ -123,7 +123,7 @@ Page order (app/page.tsx) and nav pill order both follow: Hero → About → Wor
 Every project case-study field (challenge/approach/execution/results/description) across all 22 project cards now has real, written copy — no `PLACEHOLDER:` case-study text remains in `Projects.tsx` (confirmed by search). Per the site owner's instruction, qualitative outcome copy was generated for fields that previously had no real data (e.g. results/challenge for Naivas, Bestlady, Beauty Click, My Dawa, Enterprise Ad, Back-to-School, Sense Coffee's description, and all 14 UGC video case studies) — deliberately without fabricating specific numbers/KPIs, since actual performance figures weren't supplied. Remaining items:
 - `public/images/hero.jpg` ✅ Done
 - Stats in `About.tsx` `stats` array
-- CV PDF → `public/cv-john-austine-osumba.pdf`
+- CV PDF ✅ Done — real resume at `public/cv/John-Austine-Osumba-CV.pdf`, linked from both `Contact.tsx` and `Footer.tsx` with a `download` attribute so it saves directly instead of opening in a new tab
 
 ## Contact Details (Contact.tsx / Footer.tsx)
 - Email: `johnaustineosumba@gmail.com`

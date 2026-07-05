@@ -68,10 +68,9 @@ export default function Footer() {
               </a>
             </div>
 
-            {/* PLACEHOLDER: Add download link when CV is ready */}
             <a
-              href="/cv-john-austine-osumba.pdf"
-              download
+              href="/cv/John-Austine-Osumba-CV.pdf"
+              download="John-Austine-Osumba-CV.pdf"
               className="inline-flex items-center gap-1.5 mt-4 text-xs text-gray-500 hover:text-gray-300 transition-colors"
             >
               <svg width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
